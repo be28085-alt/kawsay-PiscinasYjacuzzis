@@ -8,14 +8,54 @@ import pool8 from "@/assets/pool-8.png";
 import pool9 from "@/assets/pool-9.png";
 
 const projects = [
-  { img: pool3, title: "Piscina Residencial", desc: "Iluminación LED nocturna", size: "lg" },
-  { img: pool7, title: "Piscina Infinity", desc: "Vista panorámica a las montañas", size: "md" },
-  { img: pool1, title: "Piscina con Fuente", desc: "Acabados en piedra natural", size: "md" },
-  { img: pool8, title: "Piscina Azul Profundo", desc: "Acabados en cerámica premium", size: "md" },
-  { img: pool9, title: "Piscina Iluminada", desc: "Atmósfera nocturna única", size: "md" },
-  { img: pool2, title: "Piscina Familiar", desc: "Diseño moderno con deck de madera", size: "lg" },
-  { img: pool5, title: "Piscina Campestre", desc: "Integrada al paisaje natural", size: "md" },
-  { img: pool6, title: "Piscina Gran Formato", desc: "Para fincas y clubes", size: "md" },
+  {
+    img: pool3,
+    title: "Piscina Residencial con Iluminación LED",
+    desc: "Piscina rectangular construida en concreto con acabados en piedra natural y sistema de iluminación LED subacuática. Diseñada para disfrutar tanto de día como de noche, con un jacuzzi elevado integrado al diseño.",
+    location: "Finca privada",
+  },
+  {
+    img: pool1,
+    title: "Piscina con Fuente Decorativa",
+    desc: "Piscina cuadrada con acabados en mármol travertino y fuente central en piedra. Incluye sistema de filtración de última generación, iluminación perimetral y banca sumergida para relajación.",
+    location: "Residencia campestre",
+  },
+  {
+    img: pool2,
+    title: "Piscina Familiar con Deck en Madera",
+    desc: "Piscina de diseño moderno con acabados en piedra y deck lateral en madera teca. Equipada con sistema de recirculación automática, fuente tipo cascada y zona de bronceado.",
+    location: "Casa de campo",
+  },
+  {
+    img: pool7,
+    title: "Piscina Infinity con Vista Panorámica",
+    desc: "Espectacular piscina tipo infinity edge construida en ladera con vista a las montañas. Acabados en piedra coralina, sistema de desborde infinito y zona de solárium integrada.",
+    location: "Villa en las montañas",
+  },
+  {
+    img: pool8,
+    title: "Piscina Azul Profundo en Cerámica",
+    desc: "Piscina interior con acabados completos en cerámica azul cobalto de alta resistencia. Incluye sistema de calefacción, iluminación LED y escalera de acceso en acero inoxidable.",
+    location: "Residencia urbana",
+  },
+  {
+    img: pool9,
+    title: "Piscina con Iluminación Verde Nocturna",
+    desc: "Piscina elevada con estructura en piedra rústica y sistema de iluminación LED cromática programable. Construida en terreno inclinado con vista al atardecer y terraza perimetral.",
+    location: "Casa campestre",
+  },
+  {
+    img: pool5,
+    title: "Piscinas Campestres Dobles",
+    desc: "Proyecto de dos piscinas en entorno campestre: una piscina principal para adultos y una piscina secundaria para niños. Acabados en fibra de vidrio celeste con bordes redondeados.",
+    location: "Finca recreativa",
+  },
+  {
+    img: pool6,
+    title: "Piscina Gran Formato para Fincas",
+    desc: "Piscina de gran tamaño ideal para fincas y clubes, con sistema de filtración industrial, acabados en fibra de vidrio reforzada, bordillo perimetral y zona verde integrada.",
+    location: "Club campestre",
+  },
 ];
 
 const GallerySection = () => {
@@ -29,36 +69,58 @@ const GallerySection = () => {
           <h2 className="font-display text-3xl md:text-5xl font-bold text-foreground mb-4">
             Nuestras Piscinas
           </h2>
-          <p className="font-body text-muted-foreground max-w-xl mx-auto">
-            Más de 50 proyectos realizados. Cada piscina es una obra única diseñada a la medida de nuestros clientes.
+          <p className="font-body text-muted-foreground max-w-2xl mx-auto">
+            Más de 50 proyectos realizados en toda Colombia. Cada piscina es una obra única diseñada y construida a la medida de nuestros clientes.
           </p>
         </div>
 
-        {/* Bento-style grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 auto-rows-[280px]">
+        {/* Individual project cards */}
+        <div className="space-y-12">
           {projects.map((p, i) => (
             <div
               key={i}
-              className={`group relative overflow-hidden rounded-2xl shadow-card cursor-pointer ${
-                p.size === "lg" ? "sm:col-span-2 sm:row-span-2" : ""
-              }`}
+              className={`flex flex-col ${
+                i % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"
+              } gap-6 md:gap-10 items-center`}
             >
-              <img
-                src={p.img}
-                alt={p.title}
-                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-              />
-              {/* Always-visible label at bottom */}
-              <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-foreground/80 via-foreground/30 to-transparent p-5 pt-16">
-                <h3 className="font-display text-lg font-semibold text-primary-foreground">{p.title}</h3>
-                <p className="font-body text-sm text-primary-foreground/70">{p.desc}</p>
+              {/* Image */}
+              <div className="w-full md:w-3/5 group overflow-hidden rounded-2xl shadow-card">
+                <img
+                  src={p.img}
+                  alt={p.title}
+                  className="w-full aspect-[16/10] object-cover group-hover:scale-105 transition-transform duration-700"
+                />
+              </div>
+
+              {/* Description */}
+              <div className="w-full md:w-2/5 flex flex-col justify-center">
+                <span className="font-body text-xs font-semibold tracking-[0.15em] uppercase text-accent mb-2">
+                  {p.location}
+                </span>
+                <h3 className="font-display text-2xl md:text-3xl font-bold text-foreground mb-4">
+                  {p.title}
+                </h3>
+                <p className="font-body text-muted-foreground leading-relaxed">
+                  {p.desc}
+                </p>
+                <a
+                  href="https://wa.me/573001234567?text=Hola%2C%20me%20interesa%20un%20proyecto%20como%20este"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="mt-6 inline-flex items-center gap-2 font-body text-sm font-semibold text-primary hover:text-accent transition-colors w-fit"
+                >
+                  Solicitar cotización similar
+                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                  </svg>
+                </a>
               </div>
             </div>
           ))}
         </div>
 
         {/* Stats bar */}
-        <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-6">
+        <div className="mt-20 grid grid-cols-2 md:grid-cols-4 gap-6">
           {[
             { num: "50+", label: "Proyectos realizados" },
             { num: "8+", label: "Años de experiencia" },
