@@ -7,7 +7,8 @@ const Navbar = () => {
 
   const links = [
     { label: "Inicio", href: "#inicio" },
-    { label: "Proyectos", href: "#proyectos" },
+    { label: "Piscinas", href: "#proyectos" },
+    { label: "Jacuzzis", href: "#jacuzzis" },
     { label: "Servicios", href: "#servicios" },
     { label: "Contacto", href: "#contacto" },
   ];
