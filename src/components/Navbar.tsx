@@ -1,35 +1,41 @@
 import logo from "@/assets/logo-kawsay.png";
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
+import { Link, useLocation } from "react-router-dom";
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
+  const location = useLocation();
 
   const links = [
-    { label: "Inicio", href: "#inicio" },
-    { label: "Piscinas", href: "#proyectos" },
-    { label: "Jacuzzis", href: "#jacuzzis" },
-    { label: "Servicios", href: "#servicios" },
-    { label: "Contacto", href: "#contacto" },
+    { label: "Inicio", href: "/" },
+    { label: "Piscinas", href: "/piscinas" },
+    { label: "Jacuzzis", href: "/jacuzzis" },
+    { label: "Servicios", href: "/servicios" },
+    { label: "Contacto", href: "/contacto" },
   ];
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-card/90 backdrop-blur-md border-b border-border">
-      <div className="container mx-auto flex items-center justify-between py-3 px-4">
-        <a href="#inicio">
-          <img src={logo} alt="Kawsay Piscinas y Jacuzzis" className="h-12 md:h-14" />
-        </a>
+      <div className="container mx-auto flex items-center justify-between py-2 md:py-3 px-4">
+        <Link to="/">
+          <img src={logo} alt="Kawsay Piscinas y Jacuzzis" className="h-14 md:h-20" />
+        </Link>
 
         {/* Desktop */}
         <ul className="hidden md:flex items-center gap-8">
           {links.map((l) => (
             <li key={l.href}>
-              <a
-                href={l.href}
-                className="font-body text-sm font-medium tracking-wide text-foreground/80 hover:text-primary transition-colors"
+              <Link
+                to={l.href}
+                className={`font-body text-sm font-medium tracking-wide transition-colors ${
+                  location.pathname === l.href
+                    ? "text-primary"
+                    : "text-foreground/80 hover:text-primary"
+                }`}
               >
                 {l.label}
-              </a>
+              </Link>
             </li>
           ))}
           <li>
@@ -56,13 +62,17 @@ const Navbar = () => {
           <ul className="flex flex-col gap-4 pt-4">
             {links.map((l) => (
               <li key={l.href}>
-                <a
-                  href={l.href}
+                <Link
+                  to={l.href}
                   onClick={() => setOpen(false)}
-                  className="font-body text-sm font-medium text-foreground/80"
+                  className={`font-body text-sm font-medium ${
+                    location.pathname === l.href
+                      ? "text-primary"
+                      : "text-foreground/80"
+                  }`}
                 >
                   {l.label}
-                </a>
+                </Link>
               </li>
             ))}
             <li>

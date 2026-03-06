@@ -1,9 +1,10 @@
 import heroImg from "@/assets/pool-4.png";
+import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 
 const HeroSection = () => {
   return (
     <section id="inicio" className="relative min-h-screen flex items-center overflow-hidden">
-      {/* Background image */}
       <div className="absolute inset-0">
         <img
           src={heroImg}
@@ -13,36 +14,39 @@ const HeroSection = () => {
         <div className="absolute inset-0" style={{ background: "var(--gradient-hero)" }} />
       </div>
 
-      {/* Content */}
       <div className="relative z-10 container mx-auto px-4 pt-24">
-        <div className="max-w-2xl animate-fade-up">
+        <motion.div
+          className="max-w-2xl"
+          initial={{ opacity: 0, y: 40 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+        >
           <p className="font-body text-pool-glow text-sm font-semibold tracking-[0.2em] uppercase mb-4">
             Kawsay Piscinas y Jacuzzis
           </p>
-          <h1 className="font-display text-4xl md:text-6xl lg:text-7xl font-bold text-primary-foreground leading-tight mb-6">
+          <h1 className="font-display text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-bold text-primary-foreground leading-tight mb-6">
             Creamos el oasis que siempre soñaste
           </h1>
-          <p className="font-body text-primary-foreground/80 text-lg md:text-xl leading-relaxed mb-10 max-w-lg">
+          <p className="font-body text-primary-foreground/80 text-base md:text-xl leading-relaxed mb-8 md:mb-10 max-w-lg">
             Diseño, construcción y mantenimiento de piscinas y jacuzzis con los más altos estándares de calidad.
           </p>
           <div className="flex flex-wrap gap-4">
-            <a
-              href="#proyectos"
-              className="bg-gradient-water text-primary-foreground px-8 py-3.5 rounded-lg font-body font-semibold text-sm hover:opacity-90 transition-opacity shadow-water"
+            <Link
+              to="/piscinas"
+              className="bg-gradient-water text-primary-foreground px-6 md:px-8 py-3 md:py-3.5 rounded-lg font-body font-semibold text-sm hover:opacity-90 transition-opacity shadow-water"
             >
               Ver proyectos
-            </a>
-            <a
-              href="#contacto"
-              className="border-2 border-primary-foreground/40 text-primary-foreground px-8 py-3.5 rounded-lg font-body font-semibold text-sm hover:bg-primary-foreground/10 transition-colors"
+            </Link>
+            <Link
+              to="/contacto"
+              className="border-2 border-primary-foreground/40 text-primary-foreground px-6 md:px-8 py-3 md:py-3.5 rounded-lg font-body font-semibold text-sm hover:bg-primary-foreground/10 transition-colors"
             >
               Contáctanos
-            </a>
+            </Link>
           </div>
-        </div>
+        </motion.div>
       </div>
 
-      {/* Decorative wave */}
       <div className="absolute bottom-0 left-0 right-0">
         <svg viewBox="0 0 1440 100" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full">
           <path
