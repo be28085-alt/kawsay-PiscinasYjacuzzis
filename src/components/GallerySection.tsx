@@ -51,12 +51,6 @@ const projects = [
     location: "Residencia moderna",
   },
   {
-    img: pool7,
-    title: "Piscina Infinity con Vista Panorámica",
-    desc: "Espectacular piscina tipo infinity edge construida en ladera con vista a las montañas. Acabados en piedra coralina, sistema de desborde infinito y zona de solárium integrada.",
-    location: "Villa en las montañas",
-  },
-  {
     img: pool10,
     title: "Piscina Doble con Trampolín",
     desc: "Proyecto de piscina doble con trampolín central en estructura metálica azul. Acabados en cerámica azul cobalto, bordillo perimetral en concreto pulido y zona verde con árboles frutales.",
