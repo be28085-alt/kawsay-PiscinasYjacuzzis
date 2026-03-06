@@ -2,6 +2,7 @@ import jacuzzi1 from "@/assets/jacuzzi-1.jpg";
 import jacuzzi2 from "@/assets/jacuzzi-2.jpg";
 import jacuzzi3 from "@/assets/jacuzzi-3.jpg";
 import jacuzzi4 from "@/assets/jacuzzi-4.jpg";
+import { motion } from "framer-motion";
 
 const jacuzzis = [
   {
@@ -32,49 +33,60 @@ const jacuzzis = [
 
 const JacuzziSection = () => {
   return (
-    <section id="jacuzzis" className="py-20 md:py-28 bg-secondary/30">
+    <section id="jacuzzis" className="py-16 md:py-28 bg-secondary/30">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-16">
+        <motion.div
+          className="text-center mb-12 md:mb-16"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-50px" }}
+          transition={{ duration: 0.6 }}
+        >
           <p className="font-body text-accent text-sm font-semibold tracking-[0.15em] uppercase mb-3">
             Relax Total
           </p>
           <h2 className="font-display text-3xl md:text-5xl font-bold text-foreground mb-4">
             Jacuzzis & Spa
           </h2>
-          <p className="font-body text-muted-foreground max-w-2xl mx-auto">
+          <p className="font-body text-muted-foreground max-w-2xl mx-auto text-sm md:text-base">
             Diseñamos e instalamos jacuzzis de lujo con sistema de hidromasaje, iluminación cromática y acabados premium para transformar tu hogar en un spa privado.
           </p>
-        </div>
+        </motion.div>
 
-        {/* Individual jacuzzi cards */}
-        <div className="space-y-12">
+        <div className="space-y-10 md:space-y-14">
           {jacuzzis.map((j, i) => (
-            <div
+            <motion.div
               key={i}
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-80px" }}
+              transition={{ duration: 0.6, delay: i * 0.1 }}
               className={`flex flex-col ${
                 i % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"
-              } gap-6 md:gap-10 items-center`}
+              } gap-5 md:gap-10 items-center`}
             >
-              {/* Image */}
-              <div className="w-full md:w-3/5 group overflow-hidden rounded-2xl shadow-card">
+              <motion.div
+                className="w-full md:w-3/5 group overflow-hidden rounded-2xl shadow-card"
+                whileHover={{ scale: 1.02 }}
+                transition={{ duration: 0.4 }}
+              >
                 <img
                   src={j.img}
                   alt={j.title}
+                  loading="lazy"
                   className="w-full aspect-[4/3] object-cover group-hover:scale-105 transition-transform duration-700"
                 />
-              </div>
+              </motion.div>
 
-              {/* Description */}
               <div className="w-full md:w-2/5 flex flex-col justify-center">
-                <h3 className="font-display text-2xl md:text-3xl font-bold text-foreground mb-4">
+                <h3 className="font-display text-xl md:text-3xl font-bold text-foreground mb-3 md:mb-4">
                   {j.title}
                 </h3>
-                <p className="font-body text-muted-foreground leading-relaxed mb-5">
+                <p className="font-body text-muted-foreground leading-relaxed mb-4 md:mb-5 text-sm md:text-base">
                   {j.desc}
                 </p>
 
-                {/* Feature tags */}
-                <div className="flex flex-wrap gap-2 mb-6">
+                <div className="flex flex-wrap gap-2 mb-5 md:mb-6">
                   {j.features.map((f, fi) => (
                     <span
                       key={fi}
@@ -97,7 +109,7 @@ const JacuzziSection = () => {
                   </svg>
                 </a>
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>
