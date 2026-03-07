@@ -1,33 +1,68 @@
-import jacuzzi1 from "@/assets/jacuzzi-1.jpg";
-import jacuzzi2 from "@/assets/jacuzzi-2.jpg";
-import jacuzzi3 from "@/assets/jacuzzi-3.jpg";
-import jacuzzi4 from "@/assets/jacuzzi-4.jpg";
+import jacuzzi5 from "@/assets/jacuzzi-5.jpeg";
+import jacuzzi6 from "@/assets/jacuzzi-6.jpeg";
+import jacuzzi7 from "@/assets/jacuzzi-7.jpeg";
+import jacuzzi8 from "@/assets/jacuzzi-8.png";
+import jacuzzi9 from "@/assets/jacuzzi-9.jpeg";
+import jacuzzi10 from "@/assets/jacuzzi-10.jpg";
+import jacuzzi11 from "@/assets/jacuzzi-11.jpeg";
+import jacuzzi12 from "@/assets/jacuzzi-12.jpeg";
+import jacuzzi13 from "@/assets/jacuzzi-13.jpeg";
 import { motion } from "framer-motion";
 
 const jacuzzis = [
   {
-    img: jacuzzi1,
-    title: "Jacuzzi Tropical en Piedra Natural",
-    desc: "Jacuzzi de lujo con revestimiento exterior en piedra natural rústica, iluminación LED subacuática en tonos azules y capacidad para 6 personas. Incluye sistema de hidromasaje con 12 jets regulables y calentador eléctrico de alta eficiencia.",
-    features: ["6 personas", "12 jets", "LED azul", "Calentador eléctrico"],
+    img: jacuzzi5,
+    title: "Jacuzzi Compacto con Iluminación LED",
+    desc: "Jacuzzi portátil con estructura metálica reforzada, acabado en fibra de vidrio blanca y sistema de iluminación LED subacuática. Ideal para espacios reducidos con jets de hidromasaje y control manual.",
+    features: ["LED subacuática", "Fibra de vidrio", "Compacto", "Jets regulables"],
   },
   {
-    img: jacuzzi2,
-    title: "Jacuzzi en Mosaico Azul con Cascadas",
-    desc: "Jacuzzi elevado con acabados completos en mosaico azul premium y dos cascadas tipo lámina en acero inoxidable. Base en deck de madera teca, sistema de filtración independiente y control digital de temperatura.",
-    features: ["Mosaico premium", "2 cascadas", "Deck en teca", "Control digital"],
+    img: jacuzzi6,
+    title: "Jacuzzi Premium 8 Personas con Reposacabezas",
+    desc: "Jacuzzi de gran formato en fibra de vidrio celeste con 8 reposacabezas ergonómicos en cuero sintético negro. Sistema de hidromasaje con múltiples jets perimetrales y asientos escalonados.",
+    features: ["8 personas", "Reposacabezas", "Jets perimetrales", "Asientos escalonados"],
   },
   {
-    img: jacuzzi3,
-    title: "Jacuzzi Spa Circular con Cromática",
-    desc: "Diseño circular con cascada desbordante desde un muro en piedra natural. Sistema de iluminación cromática RGB programable con 16 colores, jets de hidromasaje perimetrales y asientos ergonómicos sumergidos.",
-    features: ["Diseño circular", "16 colores LED", "Cascada", "Asientos ergonómicos"],
+    img: jacuzzi7,
+    title: "Jacuzzi Elevado con Pérgola Cubierta",
+    desc: "Jacuzzi elevado en fibra de vidrio azul con estructura en concreto y pérgola metálica con cubierta translúcida. Incluye escalones laterales de acceso y vista panorámica al entorno natural.",
+    features: ["Pérgola cubierta", "Elevado", "Escalones", "Vista panorámica"],
   },
   {
-    img: jacuzzi4,
-    title: "Jacuzzi Integrado a Piscina con Cascada",
-    desc: "Jacuzzi rectangular elevado e integrado al borde de la piscina principal con cascada desbordante. Acabados en piedra coralina, sistema de hidromasaje de alta presión y zona de relajación con palmeras tropicales.",
-    features: ["Integrado a piscina", "Piedra coralina", "Alta presión", "Cascada"],
+    img: jacuzzi8,
+    title: "Jacuzzi Spa Rectangular de Lujo",
+    desc: "Jacuzzi rectangular de alta gama con acabado en acrílico blanco brillante, múltiples jets de hidromasaje distribuidos estratégicamente y asiento ergonómico central para máxima relajación.",
+    features: ["Acrílico premium", "Multi-jets", "Ergonómico", "Alta gama"],
+  },
+  {
+    img: jacuzzi9,
+    title: "Jacuzzi Rústico con Enchape en Madera",
+    desc: "Jacuzzi exterior con revestimiento en madera natural y acabado interior en fibra de vidrio blanca. Diseño rústico elegante ideal para fincas y casas campestres con entorno natural.",
+    features: ["Enchape madera", "Exterior", "Rústico", "Fibra de vidrio"],
+  },
+  {
+    img: jacuzzi10,
+    title: "Jacuzzi Interior con Deck en Teca",
+    desc: "Jacuzzi empotrado en baño con revestimiento lateral en madera teca natural y pared en porcelanato mármol gris. Sistema de hidromasaje con jets cromados y grifería negra moderna.",
+    features: ["Interior", "Deck en teca", "Grifería negra", "Porcelanato"],
+  },
+  {
+    img: jacuzzi11,
+    title: "Jacuzzi Azul con Vista a las Montañas",
+    desc: "Jacuzzi en fibra de vidrio azul intenso instalado en terraza elevada con vista panorámica a las montañas. Múltiples jets de hidromasaje y diseño compacto ideal para parejas.",
+    features: ["Vista montañas", "Azul intenso", "Terraza", "Para parejas"],
+  },
+  {
+    img: jacuzzi12,
+    title: "Jacuzzi Ovalado de Exhibición",
+    desc: "Elegante jacuzzi ovalado en acrílico blanco de alta resistencia con diseño ergonómico interior y acabado brillante. Modelo de exhibición perfecto para baños de lujo y spas privados.",
+    features: ["Diseño ovalado", "Acrílico blanco", "Exhibición", "Spa privado"],
+  },
+  {
+    img: jacuzzi13,
+    title: "Jacuzzi Gran Formato 10 Personas",
+    desc: "Jacuzzi de gran formato con capacidad para 10 personas, acabados en cerámica premium y 10 reposacabezas en cuero sintético. Empotrado en piso con mosaico decorativo y sistema de hidromasaje industrial.",
+    features: ["10 personas", "Cerámica premium", "Empotrado", "Hidromasaje industrial"],
   },
 ];
 
