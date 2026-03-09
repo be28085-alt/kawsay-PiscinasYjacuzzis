@@ -17,175 +17,94 @@ import pool19 from "@/assets/pool-19.jpeg";
 import { motion } from "framer-motion";
 
 const projects = [
-  {
-    img: pool3,
-    title: "Piscina Residencial con Iluminación LED",
-    desc: "Piscina rectangular construida en concreto con acabados en piedra natural y sistema de iluminación LED subacuática. Diseñada para disfrutar tanto de día como de noche, con un jacuzzi elevado integrado al diseño.",
-    location: "Finca privada",
-  },
-  {
-    img: pool11,
-    title: "Piscina con Cascada Iluminada",
-    desc: "Impresionante piscina nocturna con cascada tipo lámina en acero inoxidable e iluminación LED azul subacuática. Muro posterior en piedra natural con acabado moderno y sistema de recirculación de agua silencioso.",
-    location: "Residencia premium",
-  },
-  {
-    img: pool15,
-    title: "Piscina Familiar con Jacuzzi Elevado",
-    desc: "Amplia piscina rectangular con jacuzzi elevado integrado, perfecta para compartir en familia. Acabados en concreto pulido con bordillo perimetral y zona verde tropical.",
-    location: "Finca campestre",
-  },
-  {
-    img: pool16,
-    title: "Piscina Rústica con Bordillo en Piedra",
-    desc: "Piscina de estilo rústico con bordillo en piedra terracota y piso en adoquín natural. Diseño funcional con acabados resistentes ideal para fincas recreativas.",
-    location: "Finca recreativa",
-  },
-  {
-    img: pool17,
-    title: "Piscina con Vista a las Montañas",
-    desc: "Elegante piscina con acabados en piedra coralina y grava decorativa, rodeada de vegetación nativa con vista panorámica a las montañas. Un oasis de tranquilidad.",
-    location: "Casa campestre",
-  },
-  {
-    img: pool18,
-    title: "Piscina Nocturna con Iluminación LED",
-    desc: "Espectacular piscina con sistema de iluminación LED azul y cascada decorativa con luz neón. Ambiente nocturno único con acabados en piedra rústica y pérgola.",
-    location: "Residencia premium",
-  },
-  {
-    img: pool19,
-    title: "Piscina con Jacuzzi y Cobertor Solar",
-    desc: "Piscina compacta con jacuzzi elevado en piedra gris y sistema de cobertor solar enrollable. Diseño moderno con acabados en mármol travertino y vista a las montañas.",
-    location: "Finca en la montaña",
-  },
-  {
-    img: pool2,
-    title: "Piscina Familiar con Deck en Madera",
-    desc: "Piscina de diseño moderno con acabados en piedra y deck lateral en madera teca. Equipada con sistema de recirculación automática, fuente tipo cascada y zona de bronceado.",
-    location: "Casa de campo",
-  },
-  {
-    img: pool14,
-    title: "Piscina Nocturna con Cascada Verde",
-    desc: "Piscina elegante con sistema de iluminación LED cromática y cascada decorativa con luz verde. Ambiente nocturno espectacular con acabados en cerámica oscura y bordes minimalistas.",
-    location: "Residencia moderna",
-  },
-  {
-    img: pool10,
-    title: "Piscina Doble con Trampolín",
-    desc: "Proyecto de piscina doble con trampolín central en estructura metálica azul. Acabados en cerámica azul cobalto, bordillo perimetral en concreto pulido y zona verde con árboles frutales.",
-    location: "Finca recreativa",
-  },
-  {
-    img: pool8,
-    title: "Piscina Azul Profundo en Cerámica",
-    desc: "Piscina interior con acabados completos en cerámica azul cobalto de alta resistencia. Incluye sistema de calefacción, iluminación LED y escalera de acceso en acero inoxidable.",
-    location: "Residencia urbana",
-  },
-  {
-    img: pool12,
-    title: "Piscina Campestre con Bordillo Natural",
-    desc: "Piscina rectangular en entorno campestre tropical rodeada de vegetación exuberante. Acabados con bordillo en piedra terracota, deck en concreto estampado y zona de descanso con tumbonas.",
-    location: "Casa campestre",
-  },
-  {
-    img: pool9,
-    title: "Piscina con Iluminación Verde Nocturna",
-    desc: "Piscina elevada con estructura en piedra rústica y sistema de iluminación LED cromática programable. Construida en terreno inclinado con vista al atardecer y terraza perimetral.",
-    location: "Casa campestre",
-  },
-  {
-    img: pool5,
-    title: "Piscinas Campestres Dobles",
-    desc: "Proyecto de dos piscinas en entorno campestre: una piscina principal para adultos y una piscina secundaria para niños. Acabados en fibra de vidrio celeste con bordes redondeados.",
-    location: "Finca recreativa",
-  },
-  {
-    img: pool6,
-    title: "Piscina Gran Formato para Fincas",
-    desc: "Piscina de gran tamaño ideal para fincas y clubes, con sistema de filtración industrial, acabados en fibra de vidrio reforzada, bordillo perimetral y zona verde integrada.",
-    location: "Club campestre",
-  },
+  { img: pool3, title: "Piscina Residencial con Iluminación LED", desc: "Piscina rectangular construida en concreto con acabados en piedra natural y sistema de iluminación LED subacuática. Diseñada para disfrutar tanto de día como de noche, con un jacuzzi elevado integrado al diseño.", location: "Finca privada" },
+  { img: pool11, title: "Piscina con Cascada Iluminada", desc: "Impresionante piscina nocturna con cascada tipo lámina en acero inoxidable e iluminación LED azul subacuática. Muro posterior en piedra natural con acabado moderno.", location: "Residencia premium" },
+  { img: pool15, title: "Piscina Familiar con Jacuzzi Elevado", desc: "Amplia piscina rectangular con jacuzzi elevado integrado, perfecta para compartir en familia. Acabados en concreto pulido con bordillo perimetral y zona verde tropical.", location: "Finca campestre" },
+  { img: pool16, title: "Piscina Rústica con Bordillo en Piedra", desc: "Piscina de estilo rústico con bordillo en piedra terracota y piso en adoquín natural. Diseño funcional con acabados resistentes ideal para fincas recreativas.", location: "Finca recreativa" },
+  { img: pool17, title: "Piscina con Vista a las Montañas", desc: "Elegante piscina con acabados en piedra coralina y grava decorativa, rodeada de vegetación nativa con vista panorámica a las montañas.", location: "Casa campestre" },
+  { img: pool18, title: "Piscina Nocturna con Iluminación LED", desc: "Espectacular piscina con sistema de iluminación LED azul y cascada decorativa con luz neón. Ambiente nocturno único con acabados en piedra rústica y pérgola.", location: "Residencia premium" },
+  { img: pool19, title: "Piscina con Jacuzzi y Cobertor Solar", desc: "Piscina compacta con jacuzzi elevado en piedra gris y sistema de cobertor solar enrollable. Diseño moderno con acabados en mármol travertino.", location: "Finca en la montaña" },
+  { img: pool2, title: "Piscina Familiar con Deck en Madera", desc: "Piscina de diseño moderno con acabados en piedra y deck lateral en madera teca. Equipada con sistema de recirculación automática y fuente tipo cascada.", location: "Casa de campo" },
+  { img: pool14, title: "Piscina Nocturna con Cascada Verde", desc: "Piscina elegante con sistema de iluminación LED cromática y cascada decorativa con luz verde. Ambiente nocturno espectacular.", location: "Residencia moderna" },
+  { img: pool10, title: "Piscina Doble con Trampolín", desc: "Proyecto de piscina doble con trampolín central en estructura metálica azul. Acabados en cerámica azul cobalto y bordillo perimetral en concreto pulido.", location: "Finca recreativa" },
+  { img: pool8, title: "Piscina Azul Profundo en Cerámica", desc: "Piscina interior con acabados completos en cerámica azul cobalto de alta resistencia. Incluye sistema de calefacción, iluminación LED y escalera en acero inoxidable.", location: "Residencia urbana" },
+  { img: pool12, title: "Piscina Campestre con Bordillo Natural", desc: "Piscina rectangular en entorno campestre tropical rodeada de vegetación exuberante. Acabados con bordillo en piedra terracota y deck en concreto estampado.", location: "Casa campestre" },
+  { img: pool9, title: "Piscina con Iluminación Verde Nocturna", desc: "Piscina elevada con estructura en piedra rústica y sistema de iluminación LED cromática programable. Construida en terreno inclinado con vista al atardecer.", location: "Casa campestre" },
+  { img: pool5, title: "Piscinas Campestres Dobles", desc: "Proyecto de dos piscinas en entorno campestre: una piscina principal para adultos y una secundaria para niños. Acabados en fibra de vidrio celeste.", location: "Finca recreativa" },
+  { img: pool6, title: "Piscina Gran Formato para Fincas", desc: "Piscina de gran tamaño ideal para fincas y clubes, con sistema de filtración industrial y acabados en fibra de vidrio reforzada.", location: "Club campestre" },
 ];
-
-const fadeUp = {
-  hidden: { opacity: 0, y: 40 },
-  visible: (i: number) => ({
-    opacity: 1,
-    y: 0,
-    transition: { delay: i * 0.1, duration: 0.6, ease: "easeOut" as const },
-  }),
-};
 
 const GallerySection = () => {
   return (
-    <section id="proyectos" className="py-16 md:py-28 bg-background">
+    <section id="proyectos" className="py-20 md:py-32 bg-background relative">
       <div className="container mx-auto px-4">
+        {/* Section header */}
         <motion.div
-          className="text-center mb-12 md:mb-16"
+          className="text-center mb-16 md:mb-20"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-50px" }}
-          transition={{ duration: 0.6 }}
+          transition={{ duration: 0.7 }}
         >
-          <p className="font-body text-accent text-sm font-semibold tracking-[0.15em] uppercase mb-3">
+          <div className="line-accent mx-auto mb-5" />
+          <p className="font-body text-accent text-xs font-semibold tracking-[0.2em] uppercase mb-3">
             Portafolio
           </p>
-          <h2 className="font-display text-3xl md:text-5xl font-bold text-foreground mb-4">
+          <h2 className="font-display text-3xl md:text-5xl font-bold text-foreground mb-5">
             Nuestras Piscinas
           </h2>
-          <p className="font-body text-muted-foreground max-w-2xl mx-auto text-sm md:text-base">
-            Más de 50 proyectos realizados en toda Colombia. Cada piscina es una obra única diseñada y construida a la medida de nuestros clientes.
+          <p className="font-body text-muted-foreground max-w-xl mx-auto text-sm md:text-base leading-relaxed">
+            Más de 50 proyectos realizados en toda Colombia. Cada piscina es una obra única diseñada a la medida.
           </p>
         </motion.div>
 
-        <div className="space-y-10 md:space-y-16">
+        {/* Gallery grid */}
+        <div className="space-y-16 md:space-y-24">
           {projects.map((p, i) => (
             <motion.div
               key={i}
-              custom={i}
-              variants={fadeUp}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true, margin: "-80px" }}
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-100px" }}
+              transition={{ duration: 0.7, ease: "easeOut" }}
               className={`flex flex-col ${
                 i % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"
-              } gap-5 md:gap-10 items-center`}
+              } gap-6 md:gap-12 items-center`}
             >
               {/* Image */}
-              <motion.div
-                className="w-full md:w-3/5 group overflow-hidden rounded-2xl shadow-card"
-                whileHover={{ scale: 1.02 }}
-                transition={{ duration: 0.4 }}
-              >
-                <img
-                  src={p.img}
-                  alt={p.title}
-                  loading="lazy"
-                  className="w-full aspect-[16/10] object-cover group-hover:scale-105 transition-transform duration-700"
-                />
-              </motion.div>
+              <div className="w-full md:w-3/5 group">
+                <div className="relative overflow-hidden rounded-2xl shadow-card group-hover:shadow-elevated transition-shadow duration-500">
+                  <img
+                    src={p.img}
+                    alt={p.title}
+                    loading="lazy"
+                    className="w-full aspect-[16/10] object-cover group-hover:scale-[1.03] transition-transform duration-700 ease-out"
+                  />
+                  {/* Overlay on hover */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-foreground/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                </div>
+              </div>
 
               {/* Description */}
               <div className="w-full md:w-2/5 flex flex-col justify-center">
-                <span className="font-body text-xs font-semibold tracking-[0.15em] uppercase text-accent mb-2">
+                <span className="font-body text-xs font-semibold tracking-[0.15em] uppercase text-accent mb-2 flex items-center gap-2">
+                  <span className="w-8 h-px bg-accent" />
                   {p.location}
                 </span>
-                <h3 className="font-display text-xl md:text-3xl font-bold text-foreground mb-3 md:mb-4">
+                <h3 className="font-display text-xl md:text-3xl font-bold text-foreground mb-4 leading-tight">
                   {p.title}
                 </h3>
-                <p className="font-body text-muted-foreground leading-relaxed text-sm md:text-base">
+                <p className="font-body text-muted-foreground leading-relaxed text-sm md:text-[15px]">
                   {p.desc}
                 </p>
                 <a
                   href="https://wa.me/573001234567?text=Hola%2C%20me%20interesa%20un%20proyecto%20como%20este"
                   target="_blank"
                   rel="noreferrer"
-                  className="mt-4 md:mt-6 inline-flex items-center gap-2 font-body text-sm font-semibold text-primary hover:text-accent transition-colors w-fit"
+                  className="mt-5 md:mt-6 inline-flex items-center gap-2 font-body text-sm font-semibold text-primary hover:text-accent transition-colors w-fit group/link"
                 >
                   Solicitar cotización similar
-                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg className="w-4 h-4 group-hover/link:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                   </svg>
                 </a>
@@ -196,11 +115,11 @@ const GallerySection = () => {
 
         {/* Stats bar */}
         <motion.div
-          className="mt-16 md:mt-20 grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6"
+          className="mt-20 md:mt-28 grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
+          transition={{ duration: 0.7 }}
         >
           {[
             { num: "50+", label: "Proyectos realizados" },
@@ -208,10 +127,17 @@ const GallerySection = () => {
             { num: "100%", label: "Clientes satisfechos" },
             { num: "24/7", label: "Soporte técnico" },
           ].map((s, i) => (
-            <div key={i} className="text-center py-5 md:py-6 rounded-xl bg-secondary/60">
-              <p className="font-display text-2xl md:text-4xl font-bold text-gradient-water">{s.num}</p>
-              <p className="font-body text-xs md:text-sm text-muted-foreground mt-1">{s.label}</p>
-            </div>
+            <motion.div
+              key={i}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: i * 0.1 }}
+              className="text-center py-6 md:py-8 rounded-2xl bg-card shadow-card border border-border/50"
+            >
+              <p className="font-display text-3xl md:text-4xl font-bold text-gradient-water">{s.num}</p>
+              <p className="font-body text-xs md:text-sm text-muted-foreground mt-2">{s.label}</p>
+            </motion.div>
           ))}
         </motion.div>
       </div>
