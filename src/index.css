@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -15,24 +15,24 @@
     --popover: 0 0% 100%;
     --popover-foreground: 215 40% 12%;
 
-    --primary: 215 80% 45%;
+    --primary: 210 76% 42%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 195 60% 92%;
-    --secondary-foreground: 215 80% 30%;
+    --secondary: 200 40% 93%;
+    --secondary-foreground: 210 60% 28%;
 
-    --muted: 210 20% 94%;
-    --muted-foreground: 215 15% 50%;
+    --muted: 210 18% 94%;
+    --muted-foreground: 215 12% 48%;
 
-    --accent: 195 85% 45%;
+    --accent: 190 75% 42%;
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 210 25% 88%;
-    --input: 210 25% 88%;
-    --ring: 215 80% 45%;
+    --border: 210 20% 90%;
+    --input: 210 20% 90%;
+    --ring: 210 76% 42%;
 
     --radius: 0.75rem;
 
@@ -45,20 +45,25 @@
     --sidebar-border: 220 13% 91%;
     --sidebar-ring: 217.2 91.2% 59.8%;
 
-    /* Custom tokens */
-    --pool-deep: 215 80% 35%;
-    --pool-light: 195 85% 55%;
-    --pool-glow: 195 90% 65%;
+    /* Custom palette */
+    --pool-deep: 210 76% 32%;
+    --pool-light: 195 70% 52%;
+    --pool-glow: 190 80% 62%;
     --sand: 38 35% 85%;
-    --sand-dark: 38 30% 55%;
+    --sand-dark: 35 28% 52%;
+    --warm: 28 85% 56%;
 
     --font-display: 'Playfair Display', serif;
     --font-body: 'Montserrat', sans-serif;
 
-    --gradient-water: linear-gradient(135deg, hsl(215 80% 45%), hsl(195 85% 45%));
-    --gradient-hero: linear-gradient(180deg, hsl(215 80% 15% / 0.7), hsl(215 80% 25% / 0.4));
-    --shadow-water: 0 8px 32px hsl(215 80% 45% / 0.2);
-    --shadow-card: 0 4px 20px hsl(215 30% 20% / 0.08);
+    --gradient-water: linear-gradient(135deg, hsl(210 76% 42%), hsl(190 75% 42%));
+    --gradient-hero: linear-gradient(180deg, hsl(210 60% 10% / 0.75) 0%, hsl(210 50% 20% / 0.35) 60%, hsl(190 40% 30% / 0.15) 100%);
+    --gradient-section: linear-gradient(180deg, hsl(200 30% 96%) 0%, hsl(210 30% 98%) 100%);
+    --gradient-dark: linear-gradient(135deg, hsl(210 60% 12%), hsl(210 50% 18%));
+    --shadow-water: 0 8px 32px hsl(210 76% 42% / 0.18);
+    --shadow-card: 0 2px 16px hsl(210 30% 20% / 0.06);
+    --shadow-card-hover: 0 8px 40px hsl(210 30% 20% / 0.12);
+    --shadow-elevated: 0 20px 60px hsl(210 40% 15% / 0.12);
   }
 
   .dark {
@@ -98,12 +103,19 @@
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground antialiased;
     font-family: var(--font-body);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
 
   h1, h2, h3, h4 {
     font-family: var(--font-display);
+    letter-spacing: -0.01em;
+  }
+
+  ::selection {
+    background: hsl(210 76% 42% / 0.15);
   }
 }
 
@@ -125,5 +137,57 @@
 
   .shadow-card {
     box-shadow: var(--shadow-card);
+  }
+
+  .shadow-card-hover {
+    box-shadow: var(--shadow-card-hover);
+  }
+
+  .shadow-elevated {
+    box-shadow: var(--shadow-elevated);
+  }
+
+  /* Wave separator */
+  .section-wave {
+    position: relative;
+  }
+
+  .section-wave::after {
+    content: '';
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    right: 0;
+    height: 60px;
+    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 60' fill='none'%3E%3Cpath d='M0 30C240 10 480 50 720 30C960 10 1200 50 1440 30V60H0V30Z' fill='%23f5f7fa'/%3E%3C/svg%3E") no-repeat bottom center;
+    background-size: cover;
+    pointer-events: none;
+  }
+
+  /* Dot pattern overlay */
+  .pattern-dots {
+    background-image: radial-gradient(hsl(210 30% 80% / 0.3) 1px, transparent 1px);
+    background-size: 24px 24px;
+  }
+
+  /* Subtle line separator */
+  .line-accent {
+    width: 48px;
+    height: 3px;
+    border-radius: 2px;
+    background: var(--gradient-water);
+  }
+}
+
+@layer components {
+  .page-hero {
+    @apply relative overflow-hidden;
+    min-height: 340px;
+  }
+
+  @media (min-width: 768px) {
+    .page-hero {
+      min-height: 420px;
+    }
   }
 }

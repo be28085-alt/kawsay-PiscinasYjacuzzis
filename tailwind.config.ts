@@ -7,9 +7,9 @@ export default {
   theme: {
     container: {
       center: true,
-      padding: "2rem",
+      padding: "1.5rem",
       screens: {
-        "2xl": "1400px",
+        "2xl": "1280px",
       },
     },
     extend: {
@@ -60,6 +60,7 @@ export default {
           DEFAULT: "hsl(var(--sand))",
           dark: "hsl(var(--sand-dark))",
         },
+        warm: "hsl(var(--warm))",
         sidebar: {
           DEFAULT: "hsl(var(--sidebar-background))",
           foreground: "hsl(var(--sidebar-foreground))",
@@ -90,12 +91,16 @@ export default {
           "100%": { transform: "translateX(100%)" },
         },
         "fade-up": {
-          "0%": { opacity: "0", transform: "translateY(30px)" },
+          "0%": { opacity: "0", transform: "translateY(24px)" },
           "100%": { opacity: "1", transform: "translateY(0)" },
         },
         "ripple": {
           "0%": { transform: "scale(1)", opacity: "0.4" },
           "100%": { transform: "scale(2.5)", opacity: "0" },
+        },
+        "float": {
+          "0%, 100%": { transform: "translateY(0)" },
+          "50%": { transform: "translateY(-8px)" },
         },
       },
       animation: {
@@ -104,6 +109,7 @@ export default {
         "shimmer": "shimmer 2s infinite",
         "fade-up": "fade-up 0.7s ease-out forwards",
         "ripple": "ripple 2s ease-out infinite",
+        "float": "float 4s ease-in-out infinite",
       },
     },
   },
