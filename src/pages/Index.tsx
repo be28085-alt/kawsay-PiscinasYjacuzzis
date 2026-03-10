@@ -2,10 +2,8 @@ import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/HeroSection";
 import GallerySection from "@/components/GallerySection";
 import ServicesSection from "@/components/ServicesSection";
-import JacuzziSection from "@/components/JacuzziSection";
 import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
-import WhatsAppFloat from "@/components/WhatsAppFloat";
 
 const Index = () => {
   return (
@@ -13,11 +11,9 @@ const Index = () => {
       <Navbar />
       <HeroSection />
       <GallerySection />
-      <JacuzziSection />
       <ServicesSection />
       <ContactSection />
       <Footer />
-      <WhatsAppFloat />
     </div>
   );
 };
