@@ -12,23 +12,27 @@ import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
 
-const App = () => (
-  <QueryClientProvider client={queryClient}>
-    <TooltipProvider>
-      <Toaster />
-      <Sonner />
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Index />} />
-          <Route path="/jacuzzis" element={<JacuzzisPage />} />
-          <Route path="/servicios" element={<ServiciosPage />} />
-          <Route path="/equipos" element={<EquiposPage />} />
-          <Route path="/contacto" element={<ContactoPage />} />
-          <Route path="*" element={<NotFound />} />
-        </Routes>
-      </BrowserRouter>
-    </TooltipProvider>
-  </QueryClientProvider>
-);
+const App = () => {
+  const basename = import.meta.env.PROD ? "/kawsay-Pisinascas/" : "/";
+
+  return (
+    <QueryClientProvider client={queryClient}>
+      <TooltipProvider>
+        <Toaster />
+        <Sonner />
+        <BrowserRouter basename={basename}>
+          <Routes>
+            <Route path="/" element={<Index />} />
+            <Route path="/jacuzzis" element={<JacuzzisPage />} />
+            <Route path="/servicios" element={<ServiciosPage />} />
+            <Route path="/equipos" element={<EquiposPage />} />
+            <Route path="/contacto" element={<ContactoPage />} />
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+        </BrowserRouter>
+      </TooltipProvider>
+    </QueryClientProvider>
+  );
+};
 
 export default App;
