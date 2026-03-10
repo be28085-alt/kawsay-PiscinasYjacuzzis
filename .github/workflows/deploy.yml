@@ -33,12 +33,12 @@ jobs:
         with:
           node-version: 20
 
-      - run: cd kawsay-pool-pro && npm install
-      - run: cd kawsay-pool-pro && npm run build
+      - run: npm install
+      - run: npm run build
 
       - uses: actions/upload-pages-artifact@v3
         with:
-          path: ./kawsay-pool-pro/dist
+          path: ./dist
 
   deploy:
     environment:
