@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Redirecting...</title>
+    <script>
+      // Este archivo ayuda a GitHub Pages a servir la aplicación correctamente
+      // Redirige 404s a index.html para que React Router pueda manejar las rutas
+      const path = window.location.pathname;
+      const parts = path.split('/').filter(p => p.length > 0);
+      
+      // Si la ruta no es /kawsay-Pisinascas/, redirige a index.html
+      if (parts[0] !== 'kawsay-Pisinascas') {
+        window.location.href = '/kawsay-Pisinascas/';
+      } else {
+        // Si ya está en /kawsay-Pisinascas/, redirige a index.html
+        window.location.href = '/kawsay-Pisinascas/index.html';
+      }
+    </script>
+  </head>
+  <body>
+    <p>Redirecting...</p>
+  </body>
+</html>
