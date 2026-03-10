@@ -12,20 +12,22 @@ permissions:
 jobs:
   build:
     runs-on: ubuntu-latest
+    env:
+      GIT_SUBMODULE_RECURSE: false
 
     steps:
       - name: Configure git to ignore submodules
-        run: git config --global submodule.recurse false
+        run: |
+          git config --global submodule.recurse false
+          git config --global submodule.active false
 
       - uses: actions/checkout@v4
-        with:
-          submodules: 'false'
-          fetch-depth: 0
 
-      - name: Remove any submodule references
+      - name: Remove any submodule config
         run: |
           rm -f .gitmodules
           rm -rf .git/modules
+          git config --global --unset submodule.kawsay-pool-pro.url || true
 
       - uses: actions/setup-node@v4
         with:
