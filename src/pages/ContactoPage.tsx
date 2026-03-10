@@ -2,6 +2,7 @@ import Navbar from "@/components/Navbar";
 import PageHero from "@/components/PageHero";
 import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
+import WhatsAppFloat from "@/components/WhatsAppFloat";
 import pool3 from "@/assets/pool-3.png";
 
 const ContactoPage = () => (
@@ -15,6 +16,7 @@ const ContactoPage = () => (
     />
     <ContactSection />
     <Footer />
+    <WhatsAppFloat />
   </div>
 );
 

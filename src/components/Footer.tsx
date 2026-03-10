@@ -17,21 +17,14 @@ const socialLinks = [
 
 const Footer = () => (
   <footer className="relative overflow-hidden" style={{ background: "var(--gradient-dark)" }}>
-    {/* Top wave */}
-    <div className="w-full leading-[0]">
-      <svg viewBox="0 0 1440 48" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-8 md:h-12" preserveAspectRatio="none">
-        <path d="M0 24C240 8 480 40 720 24C960 8 1200 40 1440 24V0H0V24Z" fill="hsl(var(--background))" />
-      </svg>
-    </div>
-
-    <div className="container mx-auto px-4 py-12 md:py-16">
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-12 items-start">
+    <div className="container mx-auto px-4 py-12 md:py-14">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-10 items-start">
         {/* Brand */}
         <div>
           <Link to="/">
-            <img src={logo} alt="Kawsay" className="h-12 brightness-0 invert mb-4" />
+            <img src={logo} alt="Kawsay" className="h-11 brightness-0 invert mb-4" />
           </Link>
-          <p className="font-body text-sm text-primary-foreground/50 leading-relaxed max-w-xs">
+          <p className="font-body text-sm text-primary-foreground/45 leading-relaxed max-w-xs">
             Diseño, construcción y mantenimiento de piscinas y jacuzzis de alta calidad en toda Colombia.
           </p>
         </div>
@@ -39,12 +32,12 @@ const Footer = () => (
         {/* Links */}
         <div>
           <h4 className="font-display text-sm font-semibold text-primary-foreground mb-4">Navegación</h4>
-          <ul className="space-y-2.5">
+          <ul className="space-y-2">
             {footerLinks.map((l) => (
               <li key={l.href}>
                 <Link
                   to={l.href}
-                  className="font-body text-sm text-primary-foreground/50 hover:text-pool-glow transition-colors"
+                  className="font-body text-sm text-primary-foreground/45 hover:text-pool-glow transition-colors"
                 >
                   {l.label}
                 </Link>
@@ -56,10 +49,10 @@ const Footer = () => (
         {/* Social */}
         <div>
           <h4 className="font-display text-sm font-semibold text-primary-foreground mb-4">Redes Sociales</h4>
-          <div className="flex gap-3 mb-6">
+          <div className="flex gap-3 mb-5">
             {socialLinks.map((s, i) => (
               <a key={i} href={s.href} target="_blank" rel="noreferrer" aria-label={s.label} className="w-10 h-10 rounded-xl bg-primary-foreground/8 flex items-center justify-center hover:bg-pool-glow/20 transition-colors duration-300">
-                <svg className="w-[18px] h-[18px] text-primary-foreground/60 hover:text-pool-glow" fill="currentColor" viewBox="0 0 24 24"><path d={s.icon} /></svg>
+                <svg className="w-[17px] h-[17px] text-primary-foreground/55 hover:text-pool-glow" fill="currentColor" viewBox="0 0 24 24"><path d={s.icon} /></svg>
               </a>
             ))}
           </div>
@@ -75,8 +68,8 @@ const Footer = () => (
         </div>
       </div>
 
-      <div className="border-t border-primary-foreground/10 mt-10 pt-6">
-        <p className="font-body text-xs text-primary-foreground/40 text-center">
+      <div className="border-t border-primary-foreground/10 mt-8 pt-5">
+        <p className="font-body text-xs text-primary-foreground/35 text-center">
           © {new Date().getFullYear()} Kawsay Piscinas y Jacuzzis. Todos los derechos reservados.
         </p>
       </div>
