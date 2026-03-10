@@ -1,37 +1,24 @@
-import { Toaster } from "@/components/ui/toaster";
-import { Toaster as Sonner } from "@/components/ui/sonner";
-import { TooltipProvider } from "@/components/ui/tooltip";
-import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { HashRouter, Routes, Route } from "react-router-dom";
+import { useLocation } from "react-router-dom";
+import { useEffect } from "react";
 
-import Index from "./pages/Index";
-import JacuzzisPage from "./pages/JacuzzisPage";
-import ServiciosPage from "./pages/ServiciosPage";
-import EquiposPage from "./pages/EquiposPage";
-import ContactoPage from "./pages/ContactoPage";
-import NotFound from "./pages/NotFound";
+const NotFound = () => {
+  const location = useLocation();
 
-const queryClient = new QueryClient();
+  useEffect(() => {
+    console.error("404 Error: User attempted to access non-existent route:", location.pathname);
+  }, [location.pathname]);
 
-export default function App() {
   return (
-    <QueryClientProvider client={queryClient}>
-      <TooltipProvider>
-        <Toaster />
-        <Sonner />
-
-        <HashRouter>
-          <Routes>
-            <Route path="/" element={<Index />} />
-            <Route path="/jacuzzis" element={<JacuzzisPage />} />
-            <Route path="/servicios" element={<ServiciosPage />} />
-            <Route path="/equipos" element={<EquiposPage />} />
-            <Route path="/contacto" element={<ContactoPage />} />
-            <Route path="*" element={<NotFound />} />
-          </Routes>
-        </HashRouter>
-
-      </TooltipProvider>
-    </QueryClientProvider>
+    <div className="flex min-h-screen items-center justify-center bg-muted">
+      <div className="text-center">
+        <h1 className="mb-4 text-4xl font-bold">404</h1>
+        <p className="mb-4 text-xl text-muted-foreground">Oops! Page not found</p>
+        <a href="/" className="text-primary underline hover:text-primary/90">
+          Return to Home
+        </a>
+      </div>
+    </div>
   );
-}
+};
+
+export default NotFound;
