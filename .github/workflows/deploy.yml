@@ -2,7 +2,7 @@ name: Deploy Vite site to Pages
 
 on:
   push:
-    branches: [ "main" ]
+    branches: ["main"]
 
 permissions:
   contents: read
@@ -12,41 +12,32 @@ permissions:
 jobs:
   build:
     runs-on: ubuntu-latest
-    env:
-      GIT_SUBMODULE_RECURSE: false
 
     steps:
-      - name: Configure git to ignore submodules
-        run: |
-          git config --global submodule.recurse false
-          git config --global submodule.active false
-
       - uses: actions/checkout@v4
-
-      - name: Remove any submodule config
-        run: |
-          rm -f .gitmodules
-          rm -rf .git/modules
-          git config --global --unset submodule.kawsay-pool-pro.url || true
 
       - uses: actions/setup-node@v4
         with:
           node-version: 20
 
-      - run: npm install
-      - run: npm run build
+      - name: Install dependencies
+        run: npm install
 
-      - uses: actions/upload-pages-artifact@v3
+      - name: Build project
+        run: npm run build
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
         with:
           path: ./dist
 
   deploy:
+    needs: build
+    runs-on: ubuntu-latest
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
 
-    needs: build
-    runs-on: ubuntu-latest
-
     steps:
-      - uses: actions/deploy-pages@v4
+      - id: deployment
+        uses: actions/deploy-pages@v4
