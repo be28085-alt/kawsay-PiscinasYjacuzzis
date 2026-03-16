@@ -8,6 +8,7 @@ import JacuzzisPage from "./pages/JacuzzisPage";
 import ServiciosPage from "./pages/ServiciosPage";
 import EquiposPage from "./pages/EquiposPage";
 import ContactoPage from "./pages/ContactoPage";
+import GeomembranasPage from "./pages/GeomembranasPage";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -24,6 +25,7 @@ const App = () => (
           <Route path="/servicios" element={<ServiciosPage />} />
           <Route path="/equipos" element={<EquiposPage />} />
           <Route path="/contacto" element={<ContactoPage />} />
+          <Route path="/geomembranas" element={<GeomembranasPage />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </HashRouter>
@@ -32,3 +34,4 @@ const App = () => (
 );
 
 export default App;
+"holi 1"

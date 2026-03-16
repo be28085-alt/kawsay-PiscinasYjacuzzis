@@ -9,7 +9,7 @@ import equipoNasa from "@/assets/equipo-nasa.png";
 import equipoTubo from "@/assets/equipo-tubo.png";
 import equipoPh from "@/assets/equipo-ph.png";
 import equipoAspirador from "@/assets/equipo-aspirador.png";
-import pool13 from "@/assets/pool-13.png";
+import pool10 from "@/assets/pool-10.png";
 
 const equipos = [
   { img: equipoPurificador, title: "Purificador de Partículas", desc: "Sistema de purificación avanzado que elimina partículas microscópicas del agua, manteniéndola cristalina y libre de impurezas.", features: ["Alta eficiencia", "Fácil instalación", "Bajo mantenimiento"] },
@@ -24,7 +24,7 @@ const EquiposPage = () => (
   <div className="min-h-screen">
     <Navbar />
     <PageHero
-      image={pool13}
+      image={pool10}
       subtitle="Catálogo"
       title="Equipos para Piscinas"
       description="Todo lo que necesitas para el mantenimiento y cuidado de tu piscina. Equipos de alta calidad con garantía."

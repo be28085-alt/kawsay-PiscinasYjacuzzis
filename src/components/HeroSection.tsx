@@ -49,12 +49,14 @@ const HeroSection = () => {
           </p>
 
           <div className="flex flex-wrap gap-4">
-            <Link
-              to="/piscinas"
+            <button
+              onClick={() =>
+                document.getElementById("proyectos")?.scrollIntoView({ behavior: "smooth" })
+              }
               className="bg-gradient-water text-primary-foreground px-7 py-3.5 rounded-xl font-body font-semibold text-sm hover:shadow-water transition-all duration-300 hover:-translate-y-0.5"
             >
               Ver proyectos
-            </Link>
+            </button>
             <Link
               to="/contacto"
               className="border border-primary-foreground/30 text-primary-foreground px-7 py-3.5 rounded-xl font-body font-semibold text-sm hover:bg-primary-foreground/10 hover:border-primary-foreground/50 transition-all duration-300"
