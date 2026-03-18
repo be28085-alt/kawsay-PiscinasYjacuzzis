@@ -25,6 +25,7 @@ type PlanDetails = {
   name: string;
   dimensions: string;
   depth: string;
+  holeDepth: string;
   image: string;
 };
 
@@ -40,180 +41,195 @@ const projects: Project[] = [
   {
     img: pool3,
     title: "Piscina Familiar",
-    desc: "Piscina rectangular construida en concreto con acabados en piedra natural y sistema de iluminación LED subacuática. Diseñada para disfrutar tanto de día como de noche.",
+    desc: "Piscina rectangular construida en concreto con acabados en piedra natural y sistema de iluminación LED subacuática. Diseñada para disfrutar tanto de día como de noche. Profundidad del hueco: 1.50m.",
     location: "Finca privada",
     plan: {
       name: "Piscina Familiar Kawsay",
       dimensions: "4m x 3.70m",
       depth: "1.40m",
+      holeDepth: "1.50m",
       image: piscina4x3
     }
   },
   {
     img: pool11,
     title: "Piscina Mediana",
-    desc: "Impresionante piscina nocturna con cascada tipo lámina en acero inoxidable e iluminación LED azul subacuática. Muro posterior en piedra natural con acabado moderno.",
+    desc: "Impresionante piscina nocturna con cascada tipo lámina en acero inoxidable e iluminación LED azul subacuática. Muro posterior en piedra natural con acabado moderno. Profundidad del hueco: 1.50m.",
     location: "Residencia premium",
     plan: {
       name: "Piscina Mediana Kawsay",
       dimensions: "6m x 5.70m",
       depth: "1.40m",
+      holeDepth: "1.50m",
       image: piscina6x3
     }
   },
   {
     img: pool15,
     title: "Piscina Grande",
-    desc: "Amplia piscina rectangular con jacuzzi elevado integrado, perfecta para compartir en familia. Acabados en concreto pulido con bordillo perimetral y zona verde tropical.",
+    desc: "Amplia piscina rectangular con jacuzzi elevado integrado, perfecta para compartir en familia. Acabados en concreto pulido con bordillo perimetral y zona verde tropical. Profundidad del hueco: 1.40m.",
     location: "Finca campestre",
     plan: {
       name: "Piscina Grande",
       dimensions: "12m x 6m",
       depth: "1.30m",
+      holeDepth: "1.40m",
       image: "https://placehold.co/800x600/1a365d/ffffff.png?text=Plano+Piscina+Grande%0A12m+x+6m"
     }
   },
   {
     img: pool16,
     title: "Piscina Compacta",
-    desc: "Piscina de estilo rústico con bordillo en piedra terracota y piso en adoquín natural. Diseño funcional con acabados resistentes ideal para espacios reducidos.",
+    desc: "Piscina de estilo rústico con bordillo en piedra terracota y piso en adoquín natural. Diseño funcional con acabados resistentes ideal para espacios reducidos. Profundidad del hueco: 1.40m.",
     location: "Finca recreativa",
     plan: {
       name: "Piscina Compacta",
       dimensions: "3.5m x 2.5m",
       depth: "1.30m",
+      holeDepth: "1.40m",
       image: "https://placehold.co/800x600/1a365d/ffffff.png?text=Plano+Piscina+Compacta%0A3.5m+x+2.5m"
     }
   },
   {
     img: pool17,
     title: "Piscina Premium",
-    desc: "Elegante piscina con acabados en piedra coralina y grava decorativa, rodeada de vegetación nativa con vista panorámica a las montañas. Diseño de lujo.",
+    desc: "Elegante piscina con acabados en piedra coralina y grava decorativa, rodeada de vegetación nativa con vista panorámica a las montañas. Diseño de lujo. Profundidad del hueco: 1.40m.",
     location: "Casa campestre",
     plan: {
       name: "Piscina Premium",
       dimensions: "8m x 4m",
       depth: "1.30m",
+      holeDepth: "1.40m",
       image: "https://placehold.co/800x600/1a365d/ffffff.png?text=Plano+Piscina+Premium%0A8m+x+4m"
     }
   },
   {
     img: pool18,
     title: "Piscina Nocturna con Iluminación LED",
-    desc: "Espectacular piscina con sistema de iluminación LED azul y cascada decorativa con luz neón. Ambiente nocturno único con acabados en piedra rústica y pérgola.",
+    desc: "Espectacular piscina con sistema de iluminación LED azul y cascada decorativa con luz neón. Ambiente nocturno único con acabados en piedra rústica y pérgola. Profundidad del hueco: 1.50m.",
     location: "Residencia premium",
     plan: {
       name: "Piscina Nocturna LED",
       dimensions: "5m x 3m",
       depth: "1.40m",
+      holeDepth: "1.50m",
       image: "https://placehold.co/800x600/1a365d/ffffff.png?text=Plano+Piscina+Nocturna%0A5m+x+3m"
     }
   },
   {
     img: pool19,
     title: "Piscina con Jacuzzi y Cobertor Solar",
-    desc: "Piscina compacta con jacuzzi elevado en piedra gris y sistema de cobertor solar enrollable. Diseño moderno con acabados en mármol travertino.",
+    desc: "Piscina compacta con jacuzzi elevado en piedra gris y sistema de cobertor solar enrollable. Diseño moderno con acabados en mármol travertino. Profundidad del hueco: 1.40m.",
     location: "Finca en la montaña",
     plan: {
       name: "Piscina con Jacuzzi",
       dimensions: "6m x 4m",
       depth: "1.30m",
+      holeDepth: "1.40m",
       image: "https://placehold.co/800x600/1a365d/ffffff.png?text=Plano+Piscina+Jacuzzi%0A6m+x+4m"
     }
   },
   {
     img: pool2,
     title: "Piscina Familiar con Deck en Madera",
-    desc: "Piscina de diseño moderno con acabados en piedra y deck lateral en madera teca. Equipada con sistema de recirculación automática y fuente tipo cascada.",
+    desc: "Piscina de diseño moderno con acabados en piedra y deck lateral en madera teca. Equipada con sistema de recirculación automática y fuente tipo cascada. Profundidad del hueco: 1.50m.",
     location: "Casa de campo",
     plan: {
       name: "Piscina Deck Madera",
       dimensions: "7m x 4m",
       depth: "1.40m",
+      holeDepth: "1.50m",
       image: "https://placehold.co/800x600/1a365d/ffffff.png?text=Plano+Deck+Madera%0A7m+x+4m"
     }
   },
   {
     img: pool14,
     title: "Piscina Nocturna con Cascada Verde",
-    desc: "Piscina elegante con sistema de iluminación LED cromática y cascada decorativa con luz verde. Ambiente nocturno espectacular.",
+    desc: "Piscina elegante con sistema de iluminación LED cromática y cascada decorativa con luz verde. Ambiente nocturno espectacular. Profundidad del hueco: 1.40m.",
     location: "Residencia moderna",
     plan: {
       name: "Piscina Cascada Verde",
       dimensions: "8m x 4m",
       depth: "1.30m",
+      holeDepth: "1.40m",
       image: "https://placehold.co/800x600/1a365d/ffffff.png?text=Plano+Cascada+Verde%0A8m+x+4m"
     }
   },
   {
     img: pool10,
     title: "Piscina Doble con Trampolín",
-    desc: "Proyecto de piscina doble con trampolín central en estructura metálica azul. Acabados en cerámica azul cobalto y bordillo perimetral en concreto pulido.",
+    desc: "Proyecto de piscina doble con trampolín central en estructura metálica azul. Acabados en cerámica azul cobalto y bordillo perimetral en concreto pulido. Profundidad del hueco: 1.70m.",
     location: "Finca recreativa",
     plan: {
       name: "Piscina con Trampolín",
       dimensions: "10m x 5m",
       depth: "1.60m",
+      holeDepth: "1.70m",
       image: "https://placehold.co/800x600/1a365d/ffffff.png?text=Plano+Piscina+Trampolin%0A10m+x+5m"
     }
   },
   {
     img: pool8,
     title: "Piscina Azul Profundo en Cerámica",
-    desc: "Piscina interior con acabados completos en cerámica azul cobalto de alta resistencia. Incluye sistema de calefacción, iluminación LED y escalera en acero inoxidable.",
+    desc: "Piscina interior con acabados completos en cerámica azul cobalto de alta resistencia. Incluye sistema de calefacción, iluminación LED y escalera en acero inoxidable. Profundidad del hueco: 1.50m.",
     location: "Residencia urbana",
     plan: {
       name: "Piscina Azul Profundo",
       dimensions: "6m x 3m",
       depth: "1.40m",
+      holeDepth: "1.50m",
       image: "https://placehold.co/800x600/1a365d/ffffff.png?text=Plano+Azul+Profundo%0A6m+x+3m"
     }
   },
   {
     img: pool12,
     title: "Piscina Campestre con Bordillo Natural",
-    desc: "Piscina rectangular en entorno campestre tropical rodeada de vegetación exuberante. Acabados con bordillo en piedra terracota y deck en concreto estampado.",
+    desc: "Piscina rectangular en entorno campestre tropical rodeada de vegetación exuberante. Acabados con bordillo en piedra terracota y deck en concreto estampado. Profundidad del hueco: 1.40m.",
     location: "Casa campestre",
     plan: {
       name: "Piscina Bordillo Natural",
       dimensions: "9m x 4m",
       depth: "1.30m",
+      holeDepth: "1.40m",
       image: "https://placehold.co/800x600/1a365d/ffffff.png?text=Plano+Bordillo+Natural%0A9m+x+4m"
     }
   },
   {
     img: pool9,
     title: "Piscina con Iluminación Verde Nocturna",
-    desc: "Piscina elevada con estructura en piedra rústica y sistema de iluminación LED cromática programable. Construida en terreno inclinado con vista al atardecer.",
+    desc: "Piscina elevada con estructura en piedra rústica y sistema de iluminación LED cromática programable. Construida en terreno inclinado con vista al atardecer. Profundidad del hueco: 1.50m.",
     location: "Casa campestre",
     plan: {
       name: "Piscina Iluminación Verde",
       dimensions: "7m x 3m",
       depth: "1.40m",
+      holeDepth: "1.50m",
       image: "https://placehold.co/800x600/1a365d/ffffff.png?text=Plano+Iluminacion+Verde%0A7m+x+3m"
     }
   },
   {
     img: pool5,
     title: "Piscinas Campestres Dobles",
-    desc: "Proyecto de dos piscinas en entorno campestre: una piscina principal para adultos y una secundaria para niños. Acabados en fibra de vidrio celeste.",
+    desc: "Proyecto de dos piscinas en entorno campestre: una piscina principal para adultos y una secundaria para niños. Acabados en fibra de vidrio celeste. Profundidad del hueco: 1.50m.",
     location: "Finca recreativa",
     plan: {
       name: "Piscinas Dobles",
       dimensions: "14m x 6m",
       depth: "1.40m",
+      holeDepth: "1.50m",
       image: "https://placehold.co/800x600/1a365d/ffffff.png?text=Plano+Piscinas+Dobles%0A14m+x+6m"
     }
   },
   {
     img: pool6,
     title: "Piscina Gran Formato para Fincas",
-    desc: "Piscina de gran tamaño ideal para fincas y clubes, con sistema de filtración industrial y acabados en fibra de vidrio reforzada.",
+    desc: "Piscina de gran tamaño ideal para fincas y clubes, con sistema de filtración industrial y acabados en fibra de vidrio reforzada. Profundidad del hueco: 1.60m.",
     location: "Club campestre",
     plan: {
       name: "Piscina Gran Formato",
       dimensions: "15m x 7m",
       depth: "1.50m",
+      holeDepth: "1.60m",
       image: "https://placehold.co/800x600/1a365d/ffffff.png?text=Plano+Gran+Formato%0A15m+x+7m"
     }
   }
@@ -409,9 +425,19 @@ const GallerySection = () => {
                     <div className="w-12 h-12 rounded-xl bg-background flex items-center justify-center shadow-sm">
                       <Waves className="w-6 h-6 text-primary" />
                     </div>
-                    <div>
+                    <div className="flex-1">
                       <p className="font-body text-xs text-muted-foreground font-medium mb-1 uppercase tracking-wider">Profundidad</p>
-                      <p className="font-display font-semibold text-xl text-foreground">{selectedPlan.plan.depth}</p>
+                      <div className="flex items-baseline gap-4">
+                        <div>
+                          <p className="font-body text-[10px] text-muted-foreground mb-0.5">Piscina</p>
+                          <p className="font-display font-semibold text-xl text-foreground">{selectedPlan.plan.depth}</p>
+                        </div>
+                        <div className="w-px h-8 bg-border/50 self-end mb-1" />
+                        <div>
+                          <p className="font-body text-[10px] text-muted-foreground mb-0.5">Hueco</p>
+                          <p className="font-display font-semibold text-xl text-primary">{selectedPlan.plan.holeDepth}</p>
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </div>
