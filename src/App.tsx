@@ -11,6 +11,8 @@ import ContactoPage from "./pages/ContactoPage";
 import GeomembranasPage from "./pages/GeomembranasPage";
 import NotFound from "./pages/NotFound";
 
+import FloatingActions from "./components/FloatingActions";
+
 const queryClient = new QueryClient();
 
 const App = () => (
@@ -28,6 +30,7 @@ const App = () => (
           <Route path="/geomembranas" element={<GeomembranasPage />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
+        <FloatingActions />
       </HashRouter>
     </TooltipProvider>
   </QueryClientProvider>

@@ -116,7 +116,7 @@ const GeomembranasSection = () => {
             {[
               { label: "Europeas de alta resistencia", icon: "EU" },
               { label: "Hasta 15 años de garantía", icon: "15 AÑOS " },
-              { label: "Acabados modernos y elegantes", icon: "MODERNO" },
+              { label: "Acabados modernos y elegantes", icon: "CALIDAD" },
               { label: "Instalación rápida y segura", icon: "RÁPIDO" },
             ].map((item, index) => (
               <motion.div

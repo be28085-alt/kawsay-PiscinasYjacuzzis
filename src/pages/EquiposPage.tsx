@@ -10,14 +10,19 @@ import equipoTubo from "@/assets/equipo-tubo.png";
 import equipoPh from "@/assets/equipo-ph.png";
 import equipoAspirador from "@/assets/equipo-aspirador.png";
 import pool10 from "@/assets/pool-10.png";
+import cuartoMaquinas from "@/assets/cuarto-maquinas.png";
+import piscinaLed from "@/assets/piscina-led.png";
+import piscinaCalefaccion from "@/assets/piscina-calefaccion.png";
 
 const equipos = [
+  { img: cuartoMaquinas, title: "Cuarto de Máquinas", desc: "Instalación completa de equipos de filtración, bombas y válvulas. Espacio organizado que garantiza el mantenimiento óptimo y prolonga la vida útil de los sistemas.", features: ["Diseño compacto", "Fácil acceso", "Durabilidad"] },
   { img: equipoPurificador, title: "Purificador de Partículas", desc: "Sistema de purificación avanzado que elimina partículas microscópicas del agua, manteniéndola cristalina y libre de impurezas.", features: ["Alta eficiencia", "Fácil instalación", "Bajo mantenimiento"] },
   { img: equipoManguera, title: "Manguera de Aspiración", desc: "Manguera flexible de alta resistencia diseñada para conectar el sistema de aspiración de tu piscina. Fabricada en material anti-UV.", features: ["Anti-UV", "Flexible", "Conexión universal"] },
   { img: equipoNasa, title: "Nasa Sacahojas", desc: "Red profesional de malla fina para recoger hojas, insectos y residuos flotantes. Marco reforzado en aluminio para mayor durabilidad.", features: ["Malla fina", "Marco aluminio", "Ligera"] },
   { img: equipoTubo, title: "Tubo Telescópico", desc: "Tubo extensible de aluminio anodizado compatible con nasas, cepillos y aspiradores. Ajustable en longitud.", features: ["Extensible", "Aluminio anodizado", "Multiuso"] },
   { img: equipoPh, title: "Control de pH del Agua", desc: "Kit completo para medir y regular el nivel de pH. Incluye tiras reactivas, solución calibradora y tabla de referencia.", features: ["Kit completo", "Fácil lectura", "Preciso"] },
   { img: equipoAspirador, title: "Carro Aspirador Sumergido", desc: "Robot aspirador automático sumergible que limpia el fondo y paredes sin esfuerzo. Sistema de navegación inteligente.", features: ["Automático", "Paredes y fondo", "Filtro incluido"] },
+  { img: piscinaLed, title: "Iluminación LED Subacuática", desc: "Sistema de luces LED RGB para piscinas. Crea ambientes nocturnos espectaculares y acogedores con un mínimo consumo de energía.", features: ["Colores RGB", "Bajo consumo", "Larga vida útil"] },
 ];
 
 const EquiposPage = () => (
