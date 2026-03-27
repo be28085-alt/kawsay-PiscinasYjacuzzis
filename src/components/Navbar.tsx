@@ -98,7 +98,9 @@ const Navbar = () => {
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.25 }}
-            className="md:hidden bg-card/98 backdrop-blur-xl border-t border-border/50 overflow-hidden"
+            className={`md:hidden backdrop-blur-xl border-t border-border/10 overflow-hidden transition-all duration-300 ${
+              scrolled ? "bg-card/95" : "bg-black/60"
+            }`}
           >
             <ul className="flex flex-col gap-1 p-4">
               {links.map((l) => (
@@ -106,10 +108,12 @@ const Navbar = () => {
                   <Link
                     to={l.href}
                     onClick={() => setOpen(false)}
-                    className={`block font-body text-sm font-medium px-4 py-3 rounded-lg transition-colors ${
+                    className={`block font-body text-sm font-medium px-4 py-3 rounded-lg transition-all duration-200 ${
                       location.pathname === l.href
                         ? "text-primary bg-secondary"
-                        : "text-foreground/70 hover:bg-muted"
+                        : scrolled
+                          ? "text-foreground/70 hover:bg-muted"
+                          : "text-primary-foreground/80 hover:bg-white/10"
                     }`}
                   >
                     {l.label}

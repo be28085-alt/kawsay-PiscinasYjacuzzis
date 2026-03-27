@@ -19,51 +19,86 @@ const HeroSection = () => {
 
       <div className="relative z-10 container mx-auto px-4 pt-28 md:pt-32">
         <motion.div
-          className="max-w-2xl"
-          initial={{ opacity: 0, y: 50 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
+          className="max-w-3xl"
+          initial="hidden"
+          animate="visible"
+          variants={{
+            hidden: { opacity: 0 },
+            visible: {
+              opacity: 1,
+              transition: {
+                staggerChildren: 0.15,
+                delayChildren: 0.2
+              }
+            }
+          }}
         >
           <motion.div
             className="line-accent mb-6"
-            initial={{ scaleX: 0 }}
-            animate={{ scaleX: 1 }}
-            transition={{ duration: 0.8, delay: 0.3 }}
+            variants={{
+              hidden: { scaleX: 0 },
+              visible: { scaleX: 1, transition: { duration: 1, ease: [0.22, 1, 0.36, 1] } }
+            }}
             style={{ transformOrigin: "left" }}
           />
 
-          <p className="font-body text-pool-glow text-xs md:text-sm font-semibold tracking-[0.25em] uppercase mb-4">
+          <motion.p 
+            variants={{
+              hidden: { opacity: 0, y: 10 },
+              visible: { opacity: 1, y: 0, transition: { duration: 0.8 } }
+            }}
+            className="font-body text-pool-glow text-xs md:text-sm font-semibold tracking-[0.25em] uppercase mb-4"
+          >
             Kawsay Piscinas & Jacuzzis
-          </p>
+          </motion.p>
 
-          <h1 className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-primary-foreground leading-[1.05] mb-6">
+          <motion.h1 
+            variants={{
+              hidden: { opacity: 0, y: 20 },
+              visible: { opacity: 1, y: 0, transition: { duration: 1, ease: [0.22, 1, 0.36, 1] } }
+            }}
+            className="font-display text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-bold text-primary-foreground leading-[1.05] mb-6"
+          >
             Creamos el oasis
             <span className="block">
               que siempre{" "}
               <em className="font-display italic text-pool-glow">soñaste</em>
             </span>
-          </h1>
+          </motion.h1>
 
-          <p className="font-body text-primary-foreground/70 text-sm md:text-lg leading-relaxed mb-10 max-w-md">
+          <motion.p 
+            variants={{
+              hidden: { opacity: 0, y: 15 },
+              visible: { opacity: 1, y: 0, transition: { duration: 0.8 } }
+            }}
+            className="font-body text-primary-foreground/70 text-sm md:text-xl leading-relaxed mb-10 max-w-lg"
+          >
             Diseño, construcción y mantenimiento de piscinas y jacuzzis con los más altos estándares de calidad en Colombia.
-          </p>
+          </motion.p>
 
-          <div className="flex flex-wrap gap-4">
+          <motion.div 
+            variants={{
+              hidden: { opacity: 0, y: 15 },
+              visible: { opacity: 1, y: 0, transition: { duration: 0.8 } }
+            }}
+            className="flex flex-wrap gap-4"
+          >
             <button
               onClick={() =>
                 document.getElementById("proyectos")?.scrollIntoView({ behavior: "smooth" })
               }
-              className="bg-gradient-water text-primary-foreground px-7 py-3.5 rounded-xl font-body font-semibold text-sm hover:shadow-water transition-all duration-300 hover:-translate-y-0.5"
+              className="group relative bg-gradient-water text-primary-foreground px-8 py-4 rounded-xl font-body font-bold text-sm hover:shadow-water transition-all duration-300 overflow-hidden"
             >
-              Ver proyectos
+              <span className="relative z-10">Ver proyectos</span>
+              <div className="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300" />
             </button>
             <Link
               to="/contacto"
-              className="border border-primary-foreground/30 text-primary-foreground px-7 py-3.5 rounded-xl font-body font-semibold text-sm hover:bg-primary-foreground/10 hover:border-primary-foreground/50 transition-all duration-300"
+              className="border border-primary-foreground/30 text-primary-foreground px-8 py-4 rounded-xl font-body font-bold text-sm hover:bg-primary-foreground/10 hover:border-primary-foreground/50 transition-all duration-300 backdrop-blur-sm"
             >
               Contáctanos
             </Link>
-          </div>
+          </motion.div>
         </motion.div>
       </div>
 

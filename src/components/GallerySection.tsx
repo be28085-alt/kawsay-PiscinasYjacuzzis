@@ -272,12 +272,13 @@ const GallerySection = () => {
           {projects.map((p, i) => (
             <motion.div
               key={i}
-              initial={{ opacity: 0, y: 50 }}
+              initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-100px" }}
-              transition={{ duration: 0.7, ease: "easeOut" }}
-              className={`flex flex-col ${i % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"
-                } gap-6 md:gap-12 items-center`}
+              transition={{ duration: 0.8, delay: i * 0.1, ease: [0.22, 1, 0.36, 1] }}
+              className={`flex flex-col ${
+                i % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"
+              } gap-8 md:gap-16 items-center`}
             >
               {/* Image */}
               <div className="w-full md:w-3/5 group">
@@ -298,16 +299,16 @@ const GallerySection = () => {
                       whileInView={{ opacity: 1, y: 0 }}
                       viewport={{ once: true, amount: 0.5 }}
                       transition={{ duration: 0.5, delay: 0.2 }}
-                      whileHover={{ scale: 1.05 }}
+                      whileHover={{ scale: 1.05, y: -2 }}
                       whileTap={{ scale: 0.95 }}
                       onClick={(e) => {
                         e.stopPropagation();
                         setSelectedPlan(p);
                       }}
-                      className="absolute bottom-2 right-2 md:bottom-4 md:right-4 z-10 bg-primary/90 hover:bg-primary text-primary-foreground px-3 py-1.5 md:px-4 md:py-2.5 rounded-lg md:rounded-xl font-body text-xs md:text-sm font-semibold flex items-center gap-1.5 md:gap-2 shadow-lg hover:shadow-xl transition-all duration-300 backdrop-blur-sm"
+                      className="absolute bottom-3 right-3 md:bottom-6 md:right-6 z-10 bg-primary/90 hover:bg-primary text-primary-foreground px-4 py-2 md:px-6 md:py-3 rounded-xl md:rounded-2xl font-body text-xs md:text-sm font-semibold flex items-center gap-2 shadow-lg hover:shadow-primary/40 transition-all duration-300 backdrop-blur-md border border-white/10 group/btn"
                     >
-                      <Maximize2 className="w-3.5 h-3.5 md:w-4 md:h-4" />
-                      Ver planos
+                      <Maximize2 className="w-3.5 h-3.5 md:w-4 md:h-4 transition-transform group-hover/btn:scale-110" />
+                      <span className="relative z-10">Ver planos</span>
                     </motion.button>
                   )}
                 </div>

@@ -15,7 +15,13 @@ import piscinaLed from "@/assets/piscina-led.png";
 import piscinaCalefaccion from "@/assets/piscina-calefaccion.png";
 
 const equipos = [
-  { img: cuartoMaquinas, title: "Cuarto de Máquinas", desc: "Instalación completa de equipos de filtración, bombas y válvulas. Espacio organizado que garantiza el mantenimiento óptimo y prolonga la vida útil de los sistemas.", features: ["Diseño compacto", "Fácil acceso", "Durabilidad"] },
+  { 
+    img: cuartoMaquinas, 
+    title: "Cuarto de Máquinas", 
+    desc: "Instalación completa de equipos de filtración, bombas y válvulas. Espacio organizado que garantiza el mantenimiento óptimo y prolonga la vida útil de los sistemas.", 
+    features: ["Diseño compacto", "Fácil acceso", "Durabilidad"],
+    imgClassName: "w-full h-full object-cover"
+  },
   { img: equipoPurificador, title: "Purificador de Partículas", desc: "Sistema de purificación avanzado que elimina partículas microscópicas del agua, manteniéndola cristalina y libre de impurezas.", features: ["Alta eficiencia", "Fácil instalación", "Bajo mantenimiento"] },
   { img: equipoManguera, title: "Manguera de Aspiración", desc: "Manguera flexible de alta resistencia diseñada para conectar el sistema de aspiración de tu piscina. Fabricada en material anti-UV.", features: ["Anti-UV", "Flexible", "Conexión universal"] },
   { img: equipoNasa, title: "Nasa Sacahojas", desc: "Red profesional de malla fina para recoger hojas, insectos y residuos flotantes. Marco reforzado en aluminio para mayor durabilidad.", features: ["Malla fina", "Marco aluminio", "Ligera"] },
@@ -47,11 +53,11 @@ const EquiposPage = () => (
               transition={{ duration: 0.5, delay: i * 0.1 }}
               className="bg-card rounded-2xl overflow-hidden shadow-card hover:shadow-card-hover transition-all duration-300 group border border-border/30 hover:border-primary/20 hover:-translate-y-1"
             >
-              <div className="bg-secondary/40 p-8 flex items-center justify-center aspect-square overflow-hidden">
+              <div className="bg-secondary/40 p-0 flex items-center justify-center aspect-square overflow-hidden">
                 <img
                   src={e.img}
                   alt={e.title}
-                  className="w-3/4 h-3/4 object-contain group-hover:scale-110 transition-transform duration-500"
+                  className={e.imgClassName || "w-3/4 h-3/4 object-contain group-hover:scale-110 transition-transform duration-500"}
                 />
               </div>
               <div className="p-6 md:p-7">
