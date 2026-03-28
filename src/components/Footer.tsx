@@ -27,8 +27,11 @@ const Footer = () => (
       <div className="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-12 items-start">
         {/* Brand */}
         <div>
-          <Link to="/">
-            <img src={logo} alt="Kawsay" className="h-12 brightness-0 invert mb-4" />
+          <Link to="/" className="flex items-center gap-2.5 md:gap-3 group mb-4">
+            <img src={logo} alt="Kawsay" className="h-10 brightness-0 invert group-hover:scale-105 transition-transform duration-500" />
+            <span className="font-display font-bold text-xl md:text-2xl text-primary-foreground tracking-tight">
+              KAWSAY
+            </span>
           </Link>
           <p className="font-body text-sm text-primary-foreground/50 leading-relaxed max-w-xs">
             Diseño, construcción y mantenimiento de piscinas y jacuzzis de alta calidad en toda Colombia.

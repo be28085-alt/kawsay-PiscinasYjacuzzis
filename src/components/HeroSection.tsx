@@ -49,7 +49,7 @@ const HeroSection = () => {
             }}
             className="font-body text-pool-glow text-xs md:text-sm font-semibold tracking-[0.25em] uppercase mb-4"
           >
-            Kawsay Piscinas & Jacuzzis
+            KAWSAY PISCINAS & JACUZZIS
           </motion.p>
 
           <motion.h1 

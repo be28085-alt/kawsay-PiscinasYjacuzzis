@@ -30,6 +30,9 @@ const ServicesSection = () => {
     <section id="servicios" className="py-20 md:py-32 relative overflow-hidden" style={{ background: "var(--gradient-section)" }}>
       {/* Background decoration */}
       <div className="absolute top-0 right-0 w-96 h-96 rounded-full bg-accent/5 blur-3xl -translate-y-1/2 translate-x-1/2 pointer-events-none" />
+      <div className="absolute top-20 -left-16 text-[120px] md:text-[200px] font-display font-bold text-primary/[0.03] select-none pointer-events-none uppercase tracking-tighter -rotate-12">
+        Kawsay
+      </div>
 
       <div className="container mx-auto px-4 relative z-10">
         <motion.div

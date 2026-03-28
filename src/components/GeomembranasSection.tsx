@@ -4,6 +4,9 @@ import useEmblaCarousel from "embla-carousel-react";
 import { CheckCircle2 } from "lucide-react";
 import geomembrana1 from "@/assets/geomembrana-1.jpg";
 import geomembrana2 from "@/assets/geomembrana-2.jpg";
+import geomenbrana3 from "@/assets/geomenbrana3.png";
+import geomenbrana4 from "@/assets/geomenbrana4.png";
+import geomenbrana5 from "@/assets/geomenbrana5.png";
 
 import estilo1 from "@/assets/estilo-1.jpg";
 import estilo2 from "@/assets/estilo-2.jpg";
@@ -61,6 +64,24 @@ const piscinas = [
     title: "Piscina con Geomembrana en Construcción",
     desc: "Instalación profesional de geomembrana azul mosaico con escalones integrados. Acabado impermeable de alta resistencia, adaptable a cualquier diseño arquitectónico.",
     features: ["Instalación profesional", "Escalones integrados", "Alta resistencia", "Personalizable"],
+  },
+  {
+    img: geomenbrana3,
+    title: "Piscina Moderna con Acabado Mosaico Premium",
+    desc: "Una obra finalizada donde la geomembrana azul mosaico resalta el color cristalino del agua, brindando un aspecto lujoso y natural. Impermeabilidad total garantizada.",
+    features: ["Acabado premium", "Agua cristalina", "Resistencia UV", "Elegancia"],
+  },
+  {
+    img: geomenbrana4,
+    title: "Diseño Contemporáneo con Deck y Mosaico",
+    desc: "Integración perfecta entre la durabilidad de la geomembrana y la calidez de un deck en madera, creando un espacio de relajación único con acabados estéticos superiores.",
+    features: ["Deck integrado", "Diseño contemporáneo", "Estética superior", "Durabilidad"],
+  },
+  {
+    img: geomenbrana5,
+    title: "Termofusión y Detalle de Instalación",
+    desc: "Nuestro equipo técnico trabaja con precisión quirúrgica en cada pliegue y termofusión para garantizar una estanqueidad total y un acabado visualmente impecable.",
+    features: ["Precisión técnica", "Termofusión", "Estanqueidad 100%", "Acabado limpio"],
   },
 ];
 
@@ -127,7 +148,10 @@ const GeomembranasSection = () => {
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 className="bg-card rounded-2xl p-6 md:p-8 shadow-card hover:shadow-card-hover transition-all duration-300 border border-border/30 hover:border-primary/20 hover:-translate-y-1 text-center"
               >
-                <div className="text-3xl mb-4">{item.icon}</div>
+                {/* Icono centrado y con color azul */}
+                <div className="flex justify-center items-center mb-4">
+                  <div className="text-3xl text-blue-600">{item.icon}</div>
+                </div>
                 <p className="font-display text-sm md:text-base font-semibold text-foreground">{item.label}</p>
               </motion.div>
             ))}
@@ -281,6 +305,51 @@ const GeomembranasSection = () => {
             ))}
           </div>
         </motion.div>
+      </section>
+
+      {/* Sección de Cierre - Mensaje de Marca */}
+      <section className="py-24 md:py-36 bg-gradient-to-b from-background to-primary/5 relative overflow-hidden">
+        <div className="absolute top-0 left-0 w-full h-1 bg-gradient-water" />
+        <div className="container mx-auto px-4 relative z-10">
+          <motion.div
+            className="max-w-4xl mx-auto text-center"
+            initial={{ opacity: 0, scale: 0.95 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+          >
+            <div className="w-20 h-20 bg-gradient-water rounded-3xl flex items-center justify-center mx-auto mb-10 shadow-water animate-pulse-subtle">
+              <CheckCircle2 className="w-10 h-10 text-primary-foreground" />
+            </div>
+
+            <h3 className="font-display text-3xl md:text-5xl lg:text-6xl font-bold text-foreground mb-10 leading-tight">
+              Acabados en <span className="text-primary italic">Geomembrana</span>
+            </h3>
+
+            <div className="space-y-8">
+              <p className="font-body text-xl md:text-2xl text-foreground/90 leading-relaxed font-medium">
+                Transformamos tu piscina en un espacio moderno, resistente y completamente impermeable.
+                Nuestras geomembranas no solo garantizan durabilidad, sino que también ofrecen acabados
+                estéticos tipo mosaico que le dan un toque elegante y natural al agua.
+              </p>
+
+              <div className="line-accent mx-auto w-32 h-2 rounded-full mb-8 shadow-sm" />
+
+              <p className="font-body text-lg md:text-xl text-muted-foreground leading-relaxed max-w-3xl mx-auto">
+                Trabajamos cada instalación con precisión, cuidando cada detalle para que el resultado final
+                sea limpio, funcional y visualmente atractivo. En <span className="text-primary font-bold">KAWSAY</span>,
+                convertimos tu visión en una realidad duradera.
+              </p>
+            </div>
+          </motion.div>
+        </div>
+
+        {/* Decorative elements */}
+        <div className="absolute -bottom-24 -right-24 w-96 h-96 bg-primary/10 rounded-full blur-[120px] pointer-events-none" />
+        <div className="absolute -top-24 -left-24 w-72 h-72 bg-accent/10 rounded-full blur-[100px] pointer-events-none" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-[200px] md:text-[300px] font-display font-bold text-primary/[0.02] select-none pointer-events-none uppercase tracking-tighter">
+          KAWSAY
+        </div>
       </section>
     </>
   );
