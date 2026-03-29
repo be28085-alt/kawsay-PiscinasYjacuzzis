@@ -2,7 +2,7 @@ import Navbar from "@/components/Navbar";
 import PageHero from "@/components/PageHero";
 import Footer from "@/components/Footer";
 import GeomembranasSection from "@/components/GeomembranasSection";
-import pool14 from "@/assets/pool-14.png";
+import pool14 from "@/assets/pool-14.webp";
 
 const GeomembranasPage = () => (
   <div className="min-h-screen">

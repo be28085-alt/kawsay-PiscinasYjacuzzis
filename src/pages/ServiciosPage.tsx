@@ -3,7 +3,7 @@ import PageHero from "@/components/PageHero";
 import Footer from "@/components/Footer";
 import { motion } from "framer-motion";
 import { Droplets, Wrench, Sparkles, ShieldCheck, ThermometerSun, Paintbrush, Bug, Timer } from "lucide-react";
-import pool11 from "@/assets/pool-11.png";
+import pool11 from "@/assets/pool-11.webp";
 
 const servicios = [
   { icon: Droplets, title: "Limpieza de Piscinas", desc: "Servicio profesional de limpieza integral: aspirado de fondo, cepillado de paredes, limpieza de línea de agua y recolección de residuos superficiales." },

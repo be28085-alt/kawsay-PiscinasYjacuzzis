@@ -2,20 +2,20 @@ import { useState, useCallback, useEffect } from "react";
 import { motion } from "framer-motion";
 import useEmblaCarousel from "embla-carousel-react";
 import { CheckCircle2 } from "lucide-react";
-import geomembrana1 from "@/assets/geomembrana-1.jpg";
-import geomembrana2 from "@/assets/geomembrana-2.jpg";
-import geomenbrana3 from "@/assets/geomenbrana3.png";
-import geomenbrana4 from "@/assets/geomenbrana4.png";
-import geomenbrana5 from "@/assets/geomenbrana5.png";
+import geomembrana1 from "@/assets/geomembrana-1.webp";
+import geomembrana2 from "@/assets/geomembrana-2.webp";
+import geomenbrana3 from "@/assets/geomenbrana3.webp";
+import geomenbrana4 from "@/assets/geomenbrana4.webp";
+import geomenbrana5 from "@/assets/geomenbrana5.webp";
 
-import estilo1 from "@/assets/estilo-1.jpg";
-import estilo2 from "@/assets/estilo-2.jpg";
-import estilo3 from "@/assets/estilo-3.jpg";
-import estilo4 from "@/assets/estilo-4.jpg";
-import estilo9 from "@/assets/estilo-9.jpg";
-import estilo10 from "@/assets/estilo-10.jpg";
-import estilo11 from "@/assets/estilo-11.jpg";
-import estilo12 from "@/assets/estilo-12.jpg";
+import estilo1 from "@/assets/estilo-1.webp";
+import estilo2 from "@/assets/estilo-2.webp";
+import estilo3 from "@/assets/estilo-3.webp";
+import estilo4 from "@/assets/estilo-4.webp";
+import estilo9 from "@/assets/estilo-9.webp";
+import estilo10 from "@/assets/estilo-10.webp";
+import estilo11 from "@/assets/estilo-11.webp";
+import estilo12 from "@/assets/estilo-12.webp";
 
 const estilos = [
   {

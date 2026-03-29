@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { Home, ArrowLeft } from "lucide-react";
-import logo from "@/assets/logo-kawsay.png";
+import logo from "@/assets/logo-kawsay.webp";
 
 const NotFound = () => {
   return (

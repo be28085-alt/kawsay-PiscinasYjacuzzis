@@ -57,5 +57,4 @@ const App = () => (
   </QueryClientProvider>
 );
 
-export default App;
-"holi 1"
+export default App;

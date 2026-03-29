@@ -2,7 +2,7 @@ import Navbar from "@/components/Navbar";
 import PageHero from "@/components/PageHero";
 import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
-import pool3 from "@/assets/pool-3.png";
+import pool3 from "@/assets/pool-3.webp";
 
 const ContactoPage = () => (
   <div className="min-h-screen">

@@ -1,4 +1,4 @@
-import logo from "@/assets/logo-kawsay.png";
+import logo from "@/assets/logo-kawsay.webp";
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 import { Link, useLocation } from "react-router-dom";

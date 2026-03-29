@@ -1,12 +1,12 @@
-import jacuzzi5 from "@/assets/jacuzzi-5.jpeg";
-import jacuzzi6 from "@/assets/jacuzzi-6.jpeg";
-import jacuzzi7 from "@/assets/jacuzzi-7.jpeg";
-import jacuzzi8 from "@/assets/jacuzzi-8.png";
-import jacuzzi9 from "@/assets/jacuzzi-9.jpeg";
-import jacuzzi10 from "@/assets/jacuzzi-10.jpg";
-import jacuzzi11 from "@/assets/jacuzzi-11.jpeg";
-import jacuzzi12 from "@/assets/jacuzzi-12.jpeg";
-import jacuzzi13 from "@/assets/jacuzzi-13.jpeg";
+import jacuzzi5 from "@/assets/jacuzzi-5.webp";
+import jacuzzi6 from "@/assets/jacuzzi-6.webp";
+import jacuzzi7 from "@/assets/jacuzzi-7.webp";
+import jacuzzi8 from "@/assets/jacuzzi-8.webp";
+import jacuzzi9 from "@/assets/jacuzzi-9.webp";
+import jacuzzi10 from "@/assets/jacuzzi-10.webp";
+import jacuzzi11 from "@/assets/jacuzzi-11.webp";
+import jacuzzi12 from "@/assets/jacuzzi-12.webp";
+import jacuzzi13 from "@/assets/jacuzzi-13.webp";
 import { motion } from "framer-motion";
 
 const jacuzzis = [

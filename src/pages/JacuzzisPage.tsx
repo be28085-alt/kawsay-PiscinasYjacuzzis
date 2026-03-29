@@ -2,16 +2,16 @@ import Navbar from "@/components/Navbar";
 import PageHero from "@/components/PageHero";
 import Footer from "@/components/Footer";
 import { motion } from "framer-motion";
-import jacuzzi5 from "@/assets/jacuzzi-5.jpeg";
-import jacuzzi6 from "@/assets/jacuzzi-6.jpeg";
-import jacuzzi7 from "@/assets/jacuzzi-7.jpeg";
-import jacuzzi8 from "@/assets/jacuzzi-8.png";
-import jacuzzi9 from "@/assets/jacuzzi-9.jpeg";
-import jacuzzi10 from "@/assets/jacuzzi-10.jpg";
-import jacuzzi11 from "@/assets/jacuzzi-11.jpeg";
-import jacuzzi12 from "@/assets/jacuzzi-12.jpeg";
-import jacuzzi13 from "@/assets/jacuzzi-13.jpeg";
-import pool1 from "@/assets/pool-1.jpeg";
+import jacuzzi5 from "@/assets/jacuzzi-5.webp";
+import jacuzzi6 from "@/assets/jacuzzi-6.webp";
+import jacuzzi7 from "@/assets/jacuzzi-7.webp";
+import jacuzzi8 from "@/assets/jacuzzi-8.webp";
+import jacuzzi9 from "@/assets/jacuzzi-9.webp";
+import jacuzzi10 from "@/assets/jacuzzi-10.webp";
+import jacuzzi11 from "@/assets/jacuzzi-11.webp";
+import jacuzzi12 from "@/assets/jacuzzi-12.webp";
+import jacuzzi13 from "@/assets/jacuzzi-13.webp";
+import pool1 from "@/assets/pool-1.webp";
 
 const jacuzzis = [
   { img: jacuzzi5, title: "Jacuzzi Compacto con Iluminación LED", desc: "Jacuzzi portátil con estructura metálica reforzada, acabado en fibra de vidrio blanca y sistema de iluminación LED subacuática. Ideal para espacios reducidos con jets de hidromasaje y control manual.", features: ["LED subacuática", "Fibra de vidrio", "Compacto", "Jets regulables"] },
