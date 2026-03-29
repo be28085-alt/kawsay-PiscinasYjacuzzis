@@ -49,7 +49,7 @@ const HeroSection = () => {
             }}
             className="font-body text-pool-glow text-xs md:text-sm font-semibold tracking-[0.25em] uppercase mb-4"
           >
-            KAWSAY PISCINAS & JACUZZIS
+            DISEÑO Y CONSTRUCCIÓN EN COLOMBIA
           </motion.p>
 
           <motion.h1 
@@ -59,10 +59,10 @@ const HeroSection = () => {
             }}
             className="font-display text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-bold text-primary-foreground leading-[1.05] mb-6"
           >
-            Creamos el oasis
-            <span className="block">
-              que siempre{" "}
-              <em className="font-display italic text-pool-glow">soñaste</em>
+            Kawsay Piscinas
+            <span className="block text-2xl sm:text-3xl md:text-4xl lg:text-5xl mt-2 md:mt-4 font-body font-medium text-primary-foreground/90">
+              Creamos el oasis que siempre{" "}
+              <em className="font-display font-bold italic text-pool-glow">soñaste</em>
             </span>
           </motion.h1>
 
