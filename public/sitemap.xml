@@ -1,33 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>/</loc>
+    <loc>https://kawsaypiscinascatalogo.com/</loc>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>/#/jacuzzis</loc>
+    <loc>https://kawsaypiscinascatalogo.com/jacuzzis</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>/#/servicios</loc>
+    <loc>https://kawsaypiscinascatalogo.com/servicios</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>/#/equipos</loc>
+    <loc>https://kawsaypiscinascatalogo.com/equipos</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>/#/geomembranas</loc>
+    <loc>https://kawsaypiscinascatalogo.com/geomembranas</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>/#/contacto</loc>
-    <changefreq>yearly</changefreq>
-    <priority>0.8</priority>
+    <loc>https://kawsaypiscinascatalogo.com/contacto</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
   </url>
 </urlset>
