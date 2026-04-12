@@ -270,47 +270,42 @@ const GallerySection = () => {
         {/* Gallery grid */}
         <div className="space-y-16 md:space-y-24">
           {projects.map((p, i) => (
-            <motion.div
+            <div
               key={i}
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-100px" }}
-              transition={{ duration: 0.8, delay: i * 0.1, ease: [0.22, 1, 0.36, 1] }}
               className={`flex flex-col ${
                 i % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"
               } gap-8 md:gap-16 items-center`}
             >
               {/* Image */}
               <div className="w-full md:w-3/5 group">
-                <div className="relative overflow-hidden rounded-2xl shadow-card group-hover:shadow-elevated transition-shadow duration-500">
+                <div 
+                  className="relative overflow-hidden rounded-2xl shadow-card md:group-hover:shadow-elevated transition-shadow duration-500 group"
+                >
                   <img
                     src={p.img}
-                    alt={p.title}
+                    alt={`${p.title} - Construcción de piscinas Kawsay Cundinamarca`}
                     loading="lazy"
-                    className={`w-full aspect-[16/10] object-cover ${p.imgClassName || ''} group-hover:scale-[1.03] transition-transform duration-700 ease-out`}
+                    className={`w-full aspect-[16/10] object-cover ${p.imgClassName || ''}`}
                   />
-                  {/* Overlay on hover */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-foreground/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-
-                  {/* Botón Ver Planos */}
-                  {p.plan && (
-                    <motion.button
-                      initial={{ opacity: 0, y: 20 }}
-                      whileInView={{ opacity: 1, y: 0 }}
-                      viewport={{ once: true, amount: 0.5 }}
-                      transition={{ duration: 0.5, delay: 0.2 }}
-                      whileHover={{ scale: 1.05, y: -2 }}
-                      whileTap={{ scale: 0.95 }}
-                      onClick={(e) => {
-                        e.stopPropagation();
-                        setSelectedPlan(p);
-                      }}
-                      className="absolute bottom-3 right-3 md:bottom-6 md:right-6 z-10 bg-primary/90 hover:bg-primary text-primary-foreground px-4 py-2 md:px-6 md:py-3 rounded-xl md:rounded-2xl font-body text-xs md:text-sm font-semibold flex items-center gap-2 shadow-lg hover:shadow-primary/40 transition-all duration-300 backdrop-blur-md border border-white/10 group/btn"
-                    >
-                      <Maximize2 className="w-3.5 h-3.5 md:w-4 md:h-4 transition-transform group-hover/btn:scale-110" />
-                      <span className="relative z-10">Ver planos</span>
-                    </motion.button>
-                  )}
+                  {/* Overlay on hover over the entire image */}
+                  <div className="absolute inset-0 bg-primary/90 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col items-center justify-center p-4">
+                    {/* Texto KAWSAY centrado */}
+                    <span className="font-display text-4xl md:text-5xl font-bold text-white mb-6 tracking-wide lowercase transform -translate-y-4 md:group-hover:translate-y-0 transition-transform duration-500">
+                      kawsay
+                    </span>
+                    {/* Botón Ver Planos */}
+                    {p.plan && (
+                      <button 
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          setSelectedPlan(p);
+                        }}
+                        className="bg-white text-primary-foreground px-8 py-3.5 rounded-full font-display text-sm md:text-base font-bold tracking-wider shadow-xl transform translate-y-4 md:group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-500 hover:bg-gray-50 flex items-center gap-2 cursor-pointer relative z-10"
+                      >
+                        <span className="text-[#1e293b]">VER PLANOS</span>
+                      </button>
+                    )}
+                  </div>
                 </div>
               </div>
 
@@ -338,7 +333,7 @@ const GallerySection = () => {
                   </svg>
                 </a>
               </div>
-            </motion.div>
+            </div>
           ))}
         </div>
 
@@ -356,17 +351,13 @@ const GallerySection = () => {
             { num: "100%", label: "Clientes satisfechos" },
             { num: "24/7", label: "Soporte técnico" },
           ].map((s, i) => (
-            <motion.div
+            <div
               key={i}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: i * 0.1 }}
               className="text-center py-6 md:py-8 rounded-2xl bg-card shadow-card border border-border/50"
             >
               <p className="font-display text-3xl md:text-4xl font-bold text-gradient-water">{s.num}</p>
               <p className="font-body text-xs md:text-sm text-muted-foreground mt-2">{s.label}</p>
-            </motion.div>
+            </div>
           ))}
         </motion.div>
       </div>

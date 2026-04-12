@@ -13,7 +13,7 @@ const PageHero = ({ image, subtitle, title, description }: PageHeroProps) => {
       <div className="absolute inset-0">
         <img
           src={image}
-          alt={title}
+          alt={`${title} - Kawsay Piscinas Cundinamarca`}
           className="w-full h-full object-cover"
         />
         <div

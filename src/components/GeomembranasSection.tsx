@@ -1,7 +1,7 @@
 import { useState, useCallback, useEffect } from "react";
 import { motion } from "framer-motion";
 import useEmblaCarousel from "embla-carousel-react";
-import { CheckCircle2 } from "lucide-react";
+import { CheckCircle2, ChevronLeft, ChevronRight } from "lucide-react";
 import geomembrana1 from "@/assets/geomembrana-1.webp";
 import geomembrana2 from "@/assets/geomembrana-2.webp";
 import geomenbrana3 from "@/assets/geomenbrana3.webp";
@@ -136,21 +136,20 @@ const GeomembranasSection = () => {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 mb-16">
             {[
               { label: "Europeas de alta resistencia", icon: "EU" },
-              { label: "Hasta 15 años de garantía", icon: "15 AÑOS " },
+              { label: "Hasta 15 años de garantía", icon: "15 AÑOS" },
               { label: "Acabados modernos y elegantes", icon: "CALIDAD" },
               { label: "Instalación rápida y segura", icon: "RÁPIDO" },
             ].map((item, index) => (
               <motion.div
                 key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="bg-card rounded-2xl p-6 md:p-8 shadow-card hover:shadow-card-hover transition-all duration-300 border border-border/30 hover:border-primary/20 hover:-translate-y-1 text-center"
+                initial={index === 0 ? { opacity: 0, y: 20 } : false}
+                whileInView={index === 0 ? { opacity: 1, y: 0 } : undefined}
+                viewport={index === 0 ? { once: true } : undefined}
+                transition={index === 0 ? { duration: 0.5 } : undefined}
+                className="bg-card rounded-2xl p-6 md:p-8 shadow-card md:hover:shadow-card-hover transition-all duration-300 border border-border/30 hover:border-primary/20 md:hover:-translate-y-1 text-center"
               >
-                {/* Icono centrado y con color azul */}
                 <div className="flex justify-center items-center mb-4">
-                  <div className="text-3xl text-blue-600">{item.icon}</div>
+                  <div className="text-3xl font-bold text-primary">{item.icon}</div>
                 </div>
                 <p className="font-display text-sm md:text-base font-semibold text-foreground">{item.label}</p>
               </motion.div>
@@ -159,7 +158,7 @@ const GeomembranasSection = () => {
         </div>
       </section>
 
-      {/* Galería de piscinas - Estilo idéntico al de JacuzzisPage */}
+      {/* Galería de piscinas - Solo la primera con animación */}
       <section className="py-20 md:py-32 bg-background">
         <div className="container mx-auto px-4">
           <motion.div
@@ -178,61 +177,64 @@ const GeomembranasSection = () => {
           </motion.div>
 
           <div className="space-y-16 md:space-y-24">
-            {piscinas.map((p, i) => (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, y: 50 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-80px" }}
-                transition={{ duration: 0.7, ease: "easeOut" }}
-                className={`flex flex-col ${i % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"
-                  } gap-6 md:gap-12 items-center`}
-              >
-                <div className="w-full md:w-3/5 group">
-                  <div className="relative overflow-hidden rounded-2xl shadow-card group-hover:shadow-elevated transition-shadow duration-500">
-                    <img
-                      src={p.img}
-                      alt={p.title}
-                      loading="lazy"
-                      className="w-full aspect-[4/3] object-cover group-hover:scale-[1.03] transition-transform duration-700 ease-out"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-foreground/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                  </div>
-                </div>
+            {piscinas.map((p, i) => {
+              // Solo la primera tiene animación (index 0)
+              const hasAnimation = i === 0;
 
-                <div className="w-full md:w-2/5 flex flex-col justify-center">
-                  <h3 className="font-display text-xl md:text-3xl font-bold text-foreground mb-4 leading-tight">
-                    {p.title}
-                  </h3>
-                  <p className="font-body text-muted-foreground leading-relaxed mb-5 text-sm md:text-[15px]">
-                    {p.desc}
-                  </p>
-
-                  <div className="flex flex-wrap gap-2 mb-6">
-                    {p.features.map((f, fi) => (
-                      <span
-                        key={fi}
-                        className="font-body text-xs font-medium px-3 py-1.5 rounded-full bg-secondary text-secondary-foreground border border-border/50"
-                      >
-                        {f}
-                      </span>
-                    ))}
+              return (
+                <motion.div
+                  key={i}
+                  initial={hasAnimation ? { opacity: 0, y: 50 } : false}
+                  whileInView={hasAnimation ? { opacity: 1, y: 0 } : undefined}
+                  viewport={hasAnimation ? { once: true, margin: "-80px" } : undefined}
+                  transition={hasAnimation ? { duration: 0.7, ease: "easeOut" } : undefined}
+                  className={`flex flex-col ${i % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"} gap-6 md:gap-12 items-center`}
+                >
+                  <div className="w-full md:w-3/5 group">
+                    <div className="relative overflow-hidden rounded-2xl shadow-card">
+                      <img
+                        src={p.img}
+                        alt={`${p.title} - Geomembranas Kawsay Piscinas Cundinamarca`}
+                        loading="lazy"
+                        className="w-full aspect-[4/3] object-cover"
+                      />
+                    </div>
                   </div>
 
-                  <a
-                    href="https://wa.me/573042573555?text=Hola%2C%20me%20interesa%20una%20geomembrana"
-                    target="_blank"
-                    rel="noreferrer"
-                    className="inline-flex items-center gap-2 font-body text-sm font-semibold text-primary hover:text-accent transition-colors w-fit group/link"
-                  >
-                    Cotizar geomembrana
-                    <svg className="w-4 h-4 group-hover/link:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                    </svg>
-                  </a>
-                </div>
-              </motion.div>
-            ))}
+                  <div className="w-full md:w-2/5 flex flex-col justify-center">
+                    <h3 className="font-display text-xl md:text-3xl font-bold text-foreground mb-4 leading-tight">
+                      {p.title}
+                    </h3>
+                    <p className="font-body text-muted-foreground leading-relaxed mb-5 text-sm md:text-[15px]">
+                      {p.desc}
+                    </p>
+
+                    <div className="flex flex-wrap gap-2 mb-6">
+                      {p.features.map((f, fi) => (
+                        <span
+                          key={fi}
+                          className="font-body text-xs font-medium px-3 py-1.5 rounded-full bg-secondary text-secondary-foreground border border-border/50"
+                        >
+                          {f}
+                        </span>
+                      ))}
+                    </div>
+
+                    <a
+                      href="https://wa.me/573042573555?text=Hola%2C%20me%20interesa%20una%20geomembrana"
+                      target="_blank"
+                      rel="noreferrer"
+                      className="inline-flex items-center gap-2 font-body text-sm font-semibold text-primary hover:text-accent transition-colors w-fit group/link"
+                    >
+                      Cotizar geomembrana
+                      <svg className="w-4 h-4 group-hover/link:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                      </svg>
+                    </a>
+                  </div>
+                </motion.div>
+              );
+            })}
           </div>
         </div>
       </section>
@@ -240,13 +242,7 @@ const GeomembranasSection = () => {
       {/* Carrusel de Estilos - Infinito y Táctil, sin botones */}
       <section className="py-20 md:py-32 bg-muted/30">
         <div className="container mx-auto px-4">
-          <motion.div
-            className="text-center max-w-2xl mx-auto mb-12 md:mb-16"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-          >
+          <div className="text-center max-w-2xl mx-auto mb-12 md:mb-16">
             <h3 className="font-display text-2xl sm:text-3xl md:text-4xl font-bold text-foreground mb-4">
               Estilos de Geomembranas
             </h3>
@@ -254,15 +250,10 @@ const GeomembranasSection = () => {
               Explora nuestra variedad de diseños y texturas deslizando para encontrar el acabado
               perfecto que se adapte al estilo de tu proyecto.
             </p>
-          </motion.div>
+          </div>
         </div>
 
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-        >
+        <div>
           <div className="overflow-hidden cursor-grab active:cursor-grabbing" ref={emblaRef}>
             <div className="flex">
               {estilos.map((estilo, index) => (
@@ -270,12 +261,12 @@ const GeomembranasSection = () => {
                   key={index}
                   className="flex-[0_0_80%] sm:flex-[0_0_45%] md:flex-[0_0_30%] lg:flex-[0_0_22%] min-w-0 pl-4 md:pl-6"
                 >
-                  <div className="group rounded-2xl overflow-hidden bg-card border border-border hover:shadow-xl transition-all duration-300 h-full flex flex-col">
+                  <div className="group rounded-2xl overflow-hidden bg-card border border-border md:hover:shadow-xl transition-all duration-300 h-full flex flex-col">
                     <div className="relative h-52 sm:h-60 overflow-hidden">
                       <img
                         src={estilo.imagen}
                         alt={estilo.nombre}
-                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                        className="w-full h-full object-cover"
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                     </div>
@@ -304,12 +295,12 @@ const GeomembranasSection = () => {
               />
             ))}
           </div>
-        </motion.div>
+        </div>
       </section>
 
       {/* Sección de Cierre - Mensaje de Marca */}
       <section className="py-24 md:py-36 bg-gradient-to-b from-background to-primary/5 relative overflow-hidden">
-        <div className="absolute top-0 left-0 w-full h-1 bg-gradient-water" />
+        <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-primary to-transparent" />
         <div className="container mx-auto px-4 relative z-10">
           <motion.div
             className="max-w-4xl mx-auto text-center"
@@ -318,8 +309,8 @@ const GeomembranasSection = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-            <div className="w-20 h-20 bg-gradient-water rounded-3xl flex items-center justify-center mx-auto mb-10 shadow-water animate-pulse-subtle">
-              <CheckCircle2 className="w-10 h-10 text-primary-foreground" />
+            <div className="w-20 h-20 bg-gradient-to-br from-primary to-primary/70 rounded-3xl flex items-center justify-center mx-auto mb-10 shadow-xl">
+              <CheckCircle2 className="w-10 h-10 text-white" />
             </div>
 
             <h3 className="font-display text-3xl md:text-5xl lg:text-6xl font-bold text-foreground mb-10 leading-tight">
@@ -333,7 +324,7 @@ const GeomembranasSection = () => {
                 estéticos tipo mosaico que le dan un toque elegante y natural al agua.
               </p>
 
-              <div className="line-accent mx-auto w-32 h-2 rounded-full mb-8 shadow-sm" />
+              <div className="w-32 h-1 bg-gradient-to-r from-transparent via-primary to-transparent rounded-full mx-auto" />
 
               <p className="font-body text-lg md:text-xl text-muted-foreground leading-relaxed max-w-3xl mx-auto">
                 Trabajamos cada instalación con precisión, cuidando cada detalle para que el resultado final
@@ -344,7 +335,7 @@ const GeomembranasSection = () => {
           </motion.div>
         </div>
 
-        {/* Decorative elements */}
+        {/* Elementos decorativos */}
         <div className="absolute -bottom-24 -right-24 w-96 h-96 bg-primary/10 rounded-full blur-[120px] pointer-events-none" />
         <div className="absolute -top-24 -left-24 w-72 h-72 bg-accent/10 rounded-full blur-[100px] pointer-events-none" />
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-[200px] md:text-[300px] font-display font-bold text-primary/[0.02] select-none pointer-events-none uppercase tracking-tighter">

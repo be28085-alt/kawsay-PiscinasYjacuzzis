@@ -38,26 +38,27 @@ const JacuzzisPage = () => (
     <section className="py-20 md:py-32 bg-background">
       <div className="container mx-auto px-4">
         <div className="space-y-16 md:space-y-24">
-          {jacuzzis.map((j, i) => (
+          {jacuzzis.map((j, i) => {
+            const hasAnimation = i === 0;
+            return (
             <motion.div
               key={i}
-              initial={{ opacity: 0, y: 50 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-80px" }}
-              transition={{ duration: 0.7, ease: "easeOut" }}
+              initial={hasAnimation ? { opacity: 0, y: 50 } : false}
+              whileInView={hasAnimation ? { opacity: 1, y: 0 } : undefined}
+              viewport={hasAnimation ? { once: true, margin: "-80px" } : undefined}
+              transition={hasAnimation ? { duration: 0.7, ease: "easeOut" } : undefined}
               className={`flex flex-col ${
                 i % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"
               } gap-6 md:gap-12 items-center`}
             >
               <div className="w-full md:w-3/5 group">
-                <div className="relative overflow-hidden rounded-2xl shadow-card group-hover:shadow-elevated transition-shadow duration-500">
+                <div className="relative overflow-hidden rounded-2xl shadow-card">
                   <img
                     src={j.img}
-                    alt={j.title}
+                    alt={`${j.title} - Kawsay Piscinas Cundinamarca`}
                     loading="lazy"
-                    className="w-full aspect-[4/3] object-cover group-hover:scale-[1.03] transition-transform duration-700 ease-out"
+                    className="w-full aspect-[4/3] object-cover"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-foreground/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                 </div>
               </div>
 
@@ -93,7 +94,8 @@ const JacuzzisPage = () => (
                 </a>
               </div>
             </motion.div>
-          ))}
+            );
+          })}
         </div>
       </div>
     </section>

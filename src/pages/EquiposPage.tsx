@@ -132,20 +132,22 @@ const EquiposPage = () => (
     <section className="py-20 md:py-32 bg-background">
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
-          {equipos.map((e, i) => (
+          {equipos.map((e, i) => {
+            const hasAnimation = i === 0;
+            return (
             <motion.div
               key={i}
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: i * 0.1 }}
+              initial={hasAnimation ? { opacity: 0, y: 40 } : false}
+              whileInView={hasAnimation ? { opacity: 1, y: 0 } : undefined}
+              viewport={hasAnimation ? { once: true } : undefined}
+              transition={hasAnimation ? { duration: 0.5 } : undefined}
               className="bg-card rounded-2xl overflow-hidden shadow-card hover:shadow-card-hover transition-all duration-300 group border border-border/30 hover:border-primary/20 hover:-translate-y-1"
             >
               <div className="bg-secondary/40 p-0 flex items-center justify-center aspect-square overflow-hidden">
                 <img
                   src={e.img}
-                  alt={e.title}
-                  className={e.imgClassName || "w-3/4 h-3/4 object-contain group-hover:scale-110 transition-transform duration-500"}
+                  alt={`${e.title} - Equipos para piscinas Kawsay`}
+                  className={e.imgClassName || "w-3/4 h-3/4 object-contain"}
                 />
               </div>
               <div className="p-6 md:p-7">
@@ -178,7 +180,8 @@ const EquiposPage = () => (
                 </a>
               </div>
             </motion.div>
-          ))}
+            );
+          })}
         </div>
       </div>
     </section>

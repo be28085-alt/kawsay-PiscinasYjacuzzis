@@ -29,13 +29,15 @@ const ServiciosPage = () => (
     <section className="py-20 md:py-32 bg-background">
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 md:gap-6">
-          {servicios.map((s, i) => (
+          {servicios.map((s, i) => {
+            const hasAnimation = i === 0;
+            return (
             <motion.div
               key={i}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: i * 0.08 }}
+              initial={hasAnimation ? { opacity: 0, y: 30 } : false}
+              whileInView={hasAnimation ? { opacity: 1, y: 0 } : undefined}
+              viewport={hasAnimation ? { once: true } : undefined}
+              transition={hasAnimation ? { duration: 0.5 } : undefined}
               className="bg-card rounded-2xl p-7 md:p-8 shadow-card hover:shadow-card-hover transition-all duration-300 group border border-border/30 hover:border-primary/20 hover:-translate-y-1"
             >
               <div className="w-13 h-13 md:w-14 md:h-14 rounded-xl bg-gradient-water flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
@@ -48,7 +50,8 @@ const ServiciosPage = () => (
                 {s.desc}
               </p>
             </motion.div>
-          ))}
+            );
+          })}
         </div>
 
         {/* CTA */}

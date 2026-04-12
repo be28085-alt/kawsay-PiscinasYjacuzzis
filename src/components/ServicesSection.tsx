@@ -58,13 +58,13 @@ const ServicesSection = () => {
           {services.map((s, i) => (
             <motion.div
               key={i}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-50px" }}
-              transition={{ duration: 0.6, delay: i * 0.1, ease: [0.22, 1, 0.36, 1] }}
-              className="bg-card rounded-2xl p-7 md:p-8 shadow-card hover:shadow-card-hover transition-all duration-300 group border border-border/30 hover:border-primary/20 hover:-translate-y-2"
+              initial={false}
+              whileInView={undefined}
+              viewport={undefined}
+              transition={undefined}
+              className="bg-card rounded-2xl p-7 md:p-8 shadow-card md:hover:shadow-card-hover transition-all duration-300 group border border-border/30 hover:border-primary/20 md:hover:-translate-y-2"
             >
-              <div className="w-13 h-13 md:w-14 md:h-14 rounded-xl bg-gradient-water flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+              <div className="w-13 h-13 md:w-14 md:h-14 rounded-xl bg-gradient-water flex items-center justify-center mb-6 md:group-hover:scale-110 transition-transform duration-300">
                 <s.icon className="w-6 h-6 md:w-7 md:h-7 text-primary-foreground" />
               </div>
               <h3 className="font-display text-lg md:text-xl font-semibold text-foreground mb-3">{s.title}</h3>
@@ -86,7 +86,7 @@ const ServicesSection = () => {
             className="inline-flex items-center gap-2 font-body text-sm font-semibold text-primary hover:text-accent transition-colors group"
           >
             Ver todos los servicios
-            <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <svg className="w-4 h-4 md:group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
             </svg>
           </Link>

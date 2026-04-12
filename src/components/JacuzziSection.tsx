@@ -90,28 +90,20 @@ const JacuzziSection = () => {
 
         <div className="space-y-10 md:space-y-14">
           {jacuzzis.map((j, i) => (
-            <motion.div
+            <div
               key={i}
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-80px" }}
-              transition={{ duration: 0.6, delay: i * 0.1 }}
               className={`flex flex-col ${
                 i % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"
               } gap-5 md:gap-10 items-center`}
             >
-              <motion.div
-                className="w-full md:w-3/5 group overflow-hidden rounded-2xl shadow-card"
-                whileHover={{ scale: 1.02 }}
-                transition={{ duration: 0.4 }}
-              >
+              <div className="w-full md:w-3/5 group overflow-hidden rounded-2xl shadow-card">
                 <img
                   src={j.img}
-                  alt={j.title}
+                  alt={`${j.title} - Jacuzzis Kawsay Piscinas Colombia`}
                   loading="lazy"
-                  className="w-full aspect-[4/3] object-cover group-hover:scale-105 transition-transform duration-700"
+                  className="w-full aspect-[4/3] object-cover"
                 />
-              </motion.div>
+              </div>
 
               <div className="w-full md:w-2/5 flex flex-col justify-center">
                 <h3 className="font-display text-xl md:text-3xl font-bold text-foreground mb-3 md:mb-4">
@@ -144,7 +136,7 @@ const JacuzziSection = () => {
                   </svg>
                 </a>
               </div>
-            </motion.div>
+            </div>
           ))}
         </div>
       </div>

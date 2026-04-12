@@ -28,13 +28,19 @@ const Footer = () => (
         {/* Brand */}
         <div>
           <Link to="/" className="flex items-center gap-2.5 md:gap-3 group mb-4">
-            <img src={logo} alt="Kawsay" className="h-10 brightness-0 invert group-hover:scale-105 transition-transform duration-500" />
+            <img src={logo} alt="Kawsay" className="h-10 brightness-0 invert md:group-hover:scale-105 transition-transform duration-500" />
             <span className="font-display font-bold text-xl md:text-2xl text-primary-foreground tracking-tight">
               KAWSAY
             </span>
           </Link>
-          <p className="font-body text-sm text-primary-foreground/50 leading-relaxed max-w-xs">
-            Diseño, construcción y mantenimiento de piscinas y jacuzzis de alta calidad en toda Colombia.
+          <p className="font-body text-sm text-primary-foreground/50 leading-relaxed max-w-xs mb-4">
+            Kawsay Piscinas: Empresa líder en diseño, construcción y mantenimiento de piscinas de concreto, jacuzzis de lujo y geomembranas en Colombia.
+          </p>
+          <p className="font-body text-xs text-primary-foreground/40 leading-relaxed max-w-xs mb-2">
+            Cobertura en: La Mesa, Anapoima, Girardot, Mesitas del Colegio, Tocaima, Bogotá, Villeta, Fusagasugá, Ricaurte y toda Cundinamarca.
+          </p>
+          <p className="font-body text-xs text-primary-foreground/30 leading-relaxed max-w-xs">
+            Construcción de piscinas · Jacuzzis · Geomembranas · Equipos para piscinas · Mantenimiento de piscinas
           </p>
         </div>
 

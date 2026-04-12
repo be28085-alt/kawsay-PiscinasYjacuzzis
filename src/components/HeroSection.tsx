@@ -9,7 +9,7 @@ const HeroSection = () => {
       <div className="absolute inset-0">
         <img
           src={heroImg}
-          alt="Piscina iluminada de noche"
+          alt="Kawsay Piscinas - Construcción de piscinas iluminadas en Cundinamarca Colombia"
           className="w-full h-full object-cover scale-105"
         />
         <div className="absolute inset-0" style={{ background: "var(--gradient-hero)" }} />
@@ -49,7 +49,7 @@ const HeroSection = () => {
             }}
             className="font-body text-pool-glow text-xs md:text-sm font-semibold tracking-[0.25em] uppercase mb-4"
           >
-            DISEÑO Y CONSTRUCCIÓN EN COLOMBIA
+            CONSTRUCCIÓN DE PISCINAS EN CUNDINAMARCA
           </motion.p>
 
           <motion.h1 
@@ -73,7 +73,7 @@ const HeroSection = () => {
             }}
             className="font-body text-primary-foreground/70 text-sm md:text-xl leading-relaxed mb-10 max-w-lg"
           >
-            Diseño, construcción y mantenimiento de piscinas y jacuzzis con los más altos estándares de calidad en Colombia.
+            Especialistas en diseño, construcción y mantenimiento de piscinas de concreto y jacuzzis de lujo en La Mesa, Cundinamarca y toda Colombia.
           </motion.p>
 
           <motion.div 
@@ -87,10 +87,10 @@ const HeroSection = () => {
               onClick={() =>
                 document.getElementById("proyectos")?.scrollIntoView({ behavior: "smooth" })
               }
-              className="group relative bg-gradient-water text-primary-foreground px-8 py-4 rounded-xl font-body font-bold text-sm hover:shadow-water transition-all duration-300 overflow-hidden"
+              className="group relative bg-gradient-water text-primary-foreground px-8 py-4 rounded-xl font-body font-bold text-sm md:hover:shadow-water transition-all duration-300 overflow-hidden"
             >
               <span className="relative z-10">Ver proyectos</span>
-              <div className="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300" />
+              <div className="absolute inset-0 bg-white/20 translate-y-full md:group-hover:translate-y-0 transition-transform duration-300" />
             </button>
             <Link
               to="/contacto"

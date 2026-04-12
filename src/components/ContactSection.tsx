@@ -96,7 +96,7 @@ const ContactSection = () => {
                   href="https://wa.me/573042573555?text=Hola%2C%20me%20interesa%20una%20cotizaci%C3%B3n%20de%20piscina"
                   target="_blank"
                   rel="noreferrer"
-                  className="inline-flex items-center gap-2 bg-card text-primary px-7 py-3.5 rounded-xl font-body font-semibold text-sm hover:bg-card/90 hover:shadow-lg transition-all duration-300"
+                  className="inline-flex items-center gap-2 bg-card text-primary px-7 py-3.5 rounded-xl font-body font-semibold text-sm hover:bg-card/90 md:hover:shadow-lg transition-all duration-300"
                 >
                   Escribir por WhatsApp
                 </a>
