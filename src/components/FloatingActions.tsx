@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { MessageCircle, ArrowUp } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+import { siteConfig } from "@/lib/siteConfig";
 
 const FloatingActions = () => {
   const [showScrollTop, setShowScrollTop] = useState(false);
@@ -38,7 +39,7 @@ const FloatingActions = () => {
 
       {/* WhatsApp Button */}
       <motion.a
-        href="https://wa.me/573042573555?text=Hola%2C%20vengo%20desde%20tu%20sitio%20web%20y%20me%20gustar%C3%ADa%20una%20cotizaci%C3%B3n"
+        href={siteConfig.whatsapp.link}
         target="_blank"
         rel="noreferrer"
         initial={{ opacity: 0, scale: 0.5, y: 20 }}

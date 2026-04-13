@@ -2,6 +2,7 @@ import heroImg from "@/assets/pool-4.webp";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { ChevronDown } from "lucide-react";
+import { siteConfig } from "@/lib/siteConfig";
 
 const HeroSection = () => {
   return (

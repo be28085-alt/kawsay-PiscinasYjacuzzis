@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 import { Link, useLocation } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
+import { siteConfig } from "@/lib/siteConfig";
 
 const links = [
   { label: "Inicio", href: "/" },
@@ -69,7 +70,7 @@ const Navbar = () => {
           })}
           <li className="ml-3">
             <a
-              href="https://wa.me/573042573555"
+              href={siteConfig.whatsapp.link}
               target="_blank"
               rel="noreferrer"
               className="bg-gradient-water text-primary-foreground px-5 py-2.5 rounded-lg font-body text-sm font-semibold md:hover:shadow-water transition-all duration-200 inline-flex items-center gap-2"

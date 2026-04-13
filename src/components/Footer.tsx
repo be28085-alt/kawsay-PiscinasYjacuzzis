@@ -1,9 +1,12 @@
 import logo from "@/assets/logo-kawsay.webp";
 import { Link } from "react-router-dom";
 
+import { siteConfig } from "@/lib/siteConfig";
+
 const footerLinks = [
   { label: "Inicio", href: "/" },
   { label: "Jacuzzis", href: "/jacuzzis" },
+  { label: "Geomembranas", href: "/geomembranas" },
   { label: "Servicios", href: "/servicios" },
   { label: "Equipos", href: "/equipos" },
   { label: "Contacto", href: "/contacto" },
@@ -72,7 +75,7 @@ const Footer = () => (
             ))}
           </div>
           <a
-            href="https://wa.me/573042573555"
+            href={siteConfig.whatsapp.link}
             target="_blank"
             rel="noreferrer"
             className="inline-flex items-center gap-2 font-body text-sm text-pool-glow hover:text-pool-light transition-colors"

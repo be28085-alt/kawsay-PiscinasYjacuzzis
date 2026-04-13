@@ -24,6 +24,7 @@ import inyectores from "@/assets/inyectores.webp";
 import cascada from "@/assets/cascada.webp";
 import registroDoble from "@/assets/registrodedobleuniversal.webp";
 import accesoriosPvc from "@/assets/accesorios-pvc.webp";
+import { siteConfig } from "@/lib/siteConfig";
 
 const equipos = [
   { 
@@ -168,7 +169,7 @@ const EquiposPage = () => (
                   ))}
                 </div>
                 <a
-                  href={`https://wa.me/573042573555?text=Hola%2C%20me%20interesa%20el%20producto%3A%20${encodeURIComponent(e.title)}`}
+                  href={`${siteConfig.whatsapp.link}?text=Hola%2C%20me%20interesa%20el%20producto%3A%20${encodeURIComponent(e.title)}`}
                   target="_blank"
                   rel="noreferrer"
                   className="inline-flex items-center gap-2 font-body text-sm font-semibold text-primary hover:text-accent transition-colors group/link"

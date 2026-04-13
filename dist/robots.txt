@@ -1,8 +1,13 @@
+# Kawsay Piscinas y Jacuzzis - robots.txt
+# Construcción de piscinas en Cundinamarca, Colombia
+
 User-agent: Googlebot
 Allow: /
+Crawl-delay: 1
 
 User-agent: Bingbot
 Allow: /
+Crawl-delay: 2
 
 User-agent: Twitterbot
 Allow: /
@@ -10,5 +15,14 @@ Allow: /
 User-agent: facebookexternalhit
 Allow: /
 
+User-agent: LinkedInBot
+Allow: /
+
 User-agent: *
 Allow: /
+
+Sitemap: https://kawsaypiscinascatalogo.com/sitemap.xml
+
+# Kawsay Piscinas - Piscinas en Cundinamarca
+# Construcción de piscinas, jacuzzis y geomembranas
+# La Mesa, Anapoima, Girardot, Tocaima, Bogotá

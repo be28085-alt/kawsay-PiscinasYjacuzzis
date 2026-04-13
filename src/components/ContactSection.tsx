@@ -1,5 +1,6 @@
 import { Phone, Mail, MapPin } from "lucide-react";
 import { motion } from "framer-motion";
+import { siteConfig } from "@/lib/siteConfig";
 
 const ContactSection = () => {
   return (
@@ -46,7 +47,18 @@ const ContactSection = () => {
                   </div>
                   <div>
                     <p className="font-body text-xs text-muted-foreground uppercase tracking-wider">{item.label}</p>
-                    <p className="font-body text-sm font-medium text-foreground">{item.value}</p>
+                    {i === 0 ? (
+                      <a
+                        href={siteConfig.whatsapp.link}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="font-body text-sm font-medium text-foreground hover:text-primary transition-colors"
+                      >
+                        {item.value}
+                      </a>
+                    ) : (
+                      <p className="font-body text-sm font-medium text-foreground">{item.value}</p>
+                    )}
                   </div>
                 </motion.div>
               ))}
